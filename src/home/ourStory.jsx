@@ -1,4 +1,4 @@
-import React from 'react';
+;
 
 import bgImage from '../assets/home/hero-slider1.webp';
 
@@ -25,7 +25,7 @@ const OurStory = () => {
             style={{ backgroundImage: `url(${bgImage})` }}
         >
             {/* Overlay to darken background */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/60"></div>
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center text-white max-w-8xl mx-auto">
@@ -38,20 +38,20 @@ const OurStory = () => {
 
                 {/* Heading */}
                 <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl drop-shadow-lg">
-                    Together we're changing lives
+                    EKDKN: Making a Meaningful Change
                 </h2>
 
                 {/* Paragraph */}
                 <p className="mb-14 text-base leading-relaxed md:text-lg lg:text-xl text-gray-100 max-w-3xl drop-shadow-md">
-                    Through the collective support of donors, volunteers, and partners, we provide education, healthcare,
-                    food, and emergency relief to communities in need creating hope, dignity.
+                    Through the collective support of our volunteers and partners, we are bringing real impact to the community.
+                    Watch glimpses of our recent initiatives and the smiles we've been able to create together.
                 </p>
 
                 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3'>
                     {
                         videoUrl.map((item) => (
-                            <div key={item.id} className='w-[350px]'>
-                                <video className='w-full h-[220px] object-cover rounded-xl' src={item.links} muted autoPlay></video>
+                            <div key={item.id} className='w-[350px] max-w-full'>
+                                <video className='w-full h-[220px] object-cover rounded-xl shadow-lg border border-white/10' src={item.links} muted autoPlay loop playsInline></video>
                             </div>
                         ))
                     }
