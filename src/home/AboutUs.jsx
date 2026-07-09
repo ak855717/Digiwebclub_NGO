@@ -3,8 +3,6 @@ import { Layers, Binoculars, ArrowUpRight } from 'lucide-react'
 import image1 from '../assets/home/image (6).jpg';
 import image2 from '../assets/home/image (7).jpeg';
 import image3 from '../assets/home/image (8).jpg';
-import image4 from '../assets/home/image (9).jpeg';
-import image5 from '../assets/home/image (2).jpeg';
 
 const AboutUs = () => {
   return (
@@ -14,24 +12,28 @@ const AboutUs = () => {
 
           {/* Left side: Images Collage */}
           <div className="relative w-full max-w-[500px] mx-auto lg:mx-0 h-[600px]">
+            {/* Decorative Background Shade & Glow */}
+            <div className="absolute top-[8%] right-[2%] w-[80%] h-[88%] bg-linear-to-br from-[#DF4A43]/15 via-orange-400/10 to-transparent rounded-[40px] -rotate-6 z-0 blur-xl"></div>
+            <div className="absolute top-[10%] left-[-5%] w-[92%] h-[72%] bg-gray-200/70 rounded-[40px] z-10 border border-gray-300/50 shadow-inner"></div>
+
             {/* Top right image */}
             <img
               src={image1}
-              className="absolute top-0 right-0 w-[55%] h-[40%] object-cover rounded-4xl z-20 shadow-sm border-8 border-[#FAFAFA]"
+              className="absolute top-0 right-0 w-[55%] h-[40%] object-cover rounded-4xl z-20 shadow-[0_20px_45px_rgba(0,0,0,1.15)] border-8 border-white hover:scale-[1.02] transition-transform duration-300"
               alt="EKDKN Activity"
             />
 
             {/* Middle left image */}
             <img
               src={image2}
-              className="absolute top-[22%] left-10 w-[65%] h-[46%] object-cover rounded-4xl z-30 shadow-sm border-8 border-[#FAFAFA]"
+              className="absolute top-[22%] left-10 w-[65%] h-[46%] object-cover rounded-4xl z-30 shadow-[0_25px_50px_rgba(0,0,0,1.2)] border-8 border-white hover:scale-[1.02] transition-transform duration-300"
               alt="EKDKN Volunteer"
             />
 
             {/* Bottom image */}
             <img
               src={image3}
-              className="absolute bottom-12 -left-15 w-[50%] h-[38%] object-cover rounded-4xl z-40 shadow-sm border-8 border-[#FAFAFA]"
+              className="absolute bottom-12 -left-15 w-[50%] h-[38%] object-cover rounded-4xl z-40 shadow-[0_20px_45px_rgba(0,0,0,1.15)] border-8 border-white hover:scale-[1.02] transition-transform duration-300"
               alt="EKDKN Education"
             />
           </div>
