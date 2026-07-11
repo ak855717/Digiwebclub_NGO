@@ -98,7 +98,7 @@ const Section2 = () => {
                                     alt={item.alt}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                                     <span className="inline-block px-3 py-1 bg-[#944A00] text-white text-xs font-bold rounded-full w-fit mb-2">
                                         {item.caption}
                                     </span>
