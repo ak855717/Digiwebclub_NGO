@@ -9,8 +9,8 @@ const Navbar = () => {
     const awardsDropdown = [
         { name: "Upcoming Events", href: "/upcoming" },
         { name: "Past Event – Safety 2024", href: "/safety2024" },
-        { name: "Past Event – Environment 2024", href: "/2024" },
-        { name: "Past Event – Safety 2023", href: "/2023" },
+        { name: "Past Event – Environment 2024", href: "/environment" },
+        { name: "Past Event – Safety 2023", href: "/safety2023" },
     ];
 
     return (

@@ -1,17 +1,17 @@
 import Hero from '../components/Hero'
-import img1 from "../assets/Safety2024/image (1).jpg"
-import img2 from "../assets/Safety2024/image (2).jpg"
+import img1 from "../assets/Safety2023/image (1).jpg"
+import img2 from "../assets/Safety2023/image (2).jpg"
 
-const Safety2024 = () => {
+const Safety2023 = () => {
     return (
         <div>
-            <Hero title="Past Event - Safety 2024" currentPage="Past Event - Safety 2024" />
+            <Hero title="Past Event - Safety 2023" currentPage="Past Event - Safety 2023" />
+
             <div className="max-w-5xl mx-auto py-15">
                 <div className="px-4 ">
                     <h1 className="text-center text-3xl font-bold pb-10">
-                        17th EXCEED Occupational Health Safety & Security Awards and Conference on
-                        :"360 Degree Safety at Work place 2024 " on 20th January 2025, Radisson Blu,
-                        Jaipur Rajasthan
+                        18th Exceed Conference on " Energy Transition and Sustainable Road
+                        Transportation "- Support of Ministry of Road & Transport, Govt. of India.
                     </h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <img src={img1} alt="" />
@@ -23,4 +23,4 @@ const Safety2024 = () => {
     )
 }
 
-export default Safety2024
+export default Safety2023

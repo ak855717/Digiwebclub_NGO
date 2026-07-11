@@ -7,6 +7,9 @@ import About from './pages/About'
 import OurCSR from './pages/ourCSR'
 import Upcoming from './pages/upComingEvent'
 import Safety2024 from './pages/Safety2024'
+import Environment from './pages/Environment'
+import Safety2023 from './pages/Safety2023'
+
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
         <Route path="/ourCSR" element={<OurCSR />} />
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/safety2024" element={<Safety2024 />} />
+        <Route path="/environment" element={<Environment />} />
+        <Route path="/safety2023" element={<Safety2023 />} />
       </Routes>
       <Footer />
     </div>
