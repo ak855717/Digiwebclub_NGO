@@ -7,10 +7,10 @@ const Navbar = () => {
     const [isAwardsOpen, setIsAwardsOpen] = useState(false);
 
     const awardsDropdown = [
-        { name: "Upcoming Events", href: "#" },
-        { name: "Past Event – Safety 2024", href: "#" },
-        { name: "Past Event – Environment 2024", href: "#" },
-        { name: "Past Event – Safety 2023", href: "#" },
+        { name: "Upcoming Events", href: "/upcoming" },
+        { name: "Past Event – Safety 2024", href: "/safety2024" },
+        { name: "Past Event – Environment 2024", href: "/2024" },
+        { name: "Past Event – Safety 2023", href: "/2023" },
     ];
 
     return (
