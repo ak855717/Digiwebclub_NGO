@@ -143,7 +143,7 @@ const Hero = () => {
       {/* Image Modal */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm cursor-pointer"
+          className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm cursor-pointer"
           onClick={() => setIsModalOpen(false)}
         >
           <div className="relative max-w-4xl max-h-[90vh] w-full flex items-center justify-center">

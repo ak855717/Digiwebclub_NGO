@@ -32,15 +32,17 @@ const Navbar = () => {
                         <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
                             <Link to="/about">About</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Our CSR</li>
-                        
+                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                            <Link to="/ourCSR">Our CSR</Link>
+                        </li>
+
                         {/* Awards & Conference Dropdown */}
-                        <li 
+                        <li
                             className="relative group cursor-pointer"
                             onMouseEnter={() => setIsAwardsOpen(true)}
                             onMouseLeave={() => setIsAwardsOpen(false)}
                         >
-                            <div 
+                            <div
                                 className="flex items-center gap-1 hover:text-[#D33D33] transition-colors py-1"
                                 onClick={() => setIsAwardsOpen(!isAwardsOpen)}
                             >
@@ -49,17 +51,15 @@ const Navbar = () => {
                             </div>
 
                             {/* Dropdown Menu */}
-                            <div className={`absolute left-0 top-full pt-2 w-[240px] z-50 transition-all duration-200 ${
-                                isAwardsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'
-                            }`}>
+                            <div className={`absolute left-0 top-full pt-2 w-[240px] z-50 transition-all duration-200 ${isAwardsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'
+                                }`}>
                                 <div className="bg-white rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-gray-200 overflow-hidden">
                                     {awardsDropdown.map((item, index) => (
                                         <a
                                             key={index}
                                             href={item.href}
-                                            className={`block px-5 py-3.5 text-[15px] font-normal text-gray-700 hover:bg-gray-50 hover:text-[#D33D33] transition-colors ${
-                                                index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''
-                                            }`}
+                                            className={`block px-5 py-3.5 text-[15px] font-normal text-gray-700 hover:bg-gray-50 hover:text-[#D33D33] transition-colors ${index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''
+                                                }`}
                                         >
                                             {item.name}
                                         </a>

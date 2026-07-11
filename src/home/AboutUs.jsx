@@ -45,11 +45,11 @@ const AboutUs = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#DF4A43]"></span>
                 Who We Are
               </div>
-              <h2 className="text-4xl md:text-[44px] font-bold text-slate-900 mb-6 leading-[1.2]">
-                Support and Educate specially-abled and impoverished children.
+              <h2 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-[#DF4A43] mb-6 leading-[1.25]">
+                ABOUT SUSTAINABLE DEVELOPMENT MISSION
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed">
-                Welcome to Ek Kaam Desh ke Naam. From grassroots initiatives to large scale community programs, we continue to grow with one purpose: to serve those in need with integrity and compassion.
+              <p className="text-gray-500 text-md">
+                The Sustainable Development Mission (SDM), a specialized unit of EKDKN has undertaken the prestigious initiative of instituting the EXCEED Awards to recognize and honour exemplary contributions made by Corporate Organizations and Institutions. These awards acknowledge excellence in the fields of Environment, Occupational Health & Safety (EHS), Renewable Energy, Human Resources (HR), and Corporate Social Responsibility (CSR).
               </p>
             </div>
 
@@ -61,7 +61,7 @@ const AboutUs = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Literacy & Numeracy Enhancement</h3>
-                  <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+                  <p className="text-gray-500 text-md">
                     Through the DAKSH Initiative, we aim to reduce educational inequalities and improve the educational status of children residing in impoverished slums.
                   </p>
                 </div>
@@ -73,7 +73,7 @@ const AboutUs = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Sustainable Environment</h3>
-                  <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+                  <p className="text-gray-500 text-md">
                     With the Delhi Replantation Initiative (DRI), we conduct plantation drives across barren lands, parks, schools, and institutions.
                   </p>
                 </div>

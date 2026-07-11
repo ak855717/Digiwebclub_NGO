@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Award, Heart, PhoneCall, Star } from 'lucide-react';
 import missionImg from '../assets/healthcare.png';
 import visionImg from '../assets/hunger_relief.png';
@@ -12,21 +11,21 @@ const Approach = () => {
       title: 'Our Mission',
       image: missionImg,
       description:
-        'Our mission is to create meaningful and change by providing access to education, health care, food & essential resources',
+        "The mission of the EKDKN is based on practical consideration and realistic vision. Its mission is to inspire individuals and communities and corporate to use technology for our kid's advantages. To enable communities to be aware and conscious of the utility and necessity to using technology for their upliftment and empowerment.",
     },
     {
       icon: <Award className="w-5 h-5" />,
       title: 'Our Vision',
       image: visionImg,
       description:
-        'Our vision is to create a world where every individual has access to basic needs, equal opportunities.',
+        "Ek Kaam Desh Ke Naam (EKDKN) envisions to organize and conduct public awareness programs on social issues, to recognize and honors the individuals, organizations & associations for their outstanding contribution in socio-economic development, to provide help and assistants by encouraging individuals,organizations and corporate against the disasters and natural calamities.",
     },
     {
       icon: <Heart className="w-5 h-5" />,
       title: 'Our Values',
       image: valuesImg,
       description:
-        'Driven by purpose & guided by strong principles, our values inspire us to act with kindness, responsibility and dedication.',
+        "At EKDKN, our core values are anchored in integrity, compassion, and sustainable grassroots empowerment. We are committed to serving communities with transparency, fostering meaningful collaboration between youth, individuals, and corporate partners, and driving lasting socio-economic change across the nation.",
     },
   ];
 
