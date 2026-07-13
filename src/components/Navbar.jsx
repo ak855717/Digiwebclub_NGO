@@ -68,7 +68,9 @@ const Navbar = () => {
                             </div>
                         </li>
 
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Media</li>
+                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                            <Link to="/media">Media</Link>
+                        </li>
                         <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Gallery</li>
                         <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Career</li>
                         <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Contact</li>

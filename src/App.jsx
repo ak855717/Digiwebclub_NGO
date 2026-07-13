@@ -9,6 +9,7 @@ import Upcoming from './pages/upComingEvent'
 import Safety2024 from './pages/Safety2024'
 import Environment from './pages/Environment'
 import Safety2023 from './pages/Safety2023'
+import Media from './pages/Media'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/safety2024" element={<Safety2024 />} />
         <Route path="/environment" element={<Environment />} />
         <Route path="/safety2023" element={<Safety2023 />} />
+        <Route path="/media" element={<Media />} />
       </Routes>
       <Footer />
     </div>
