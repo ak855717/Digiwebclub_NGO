@@ -47,7 +47,7 @@ const publicationNames = [
 const mediaItems = Object.entries(mediaGlob).map(([path, mod], idx) => {
     const src = typeof mod === 'string' ? mod : mod?.default || '';
     const index = idx + 1;
-    
+
     // Assign balanced categories
     let category = 'Newspaper Coverage';
     if (index % 4 === 0) category = 'Conference & Awards';
@@ -67,8 +67,8 @@ const mediaItems = Object.entries(mediaGlob).map(([path, mod], idx) => {
         title: index % 3 === 0
             ? `17th EXCEED Occupational Health & Safety Awards Coverage #${index}`
             : index % 3 === 1
-            ? `National Press Feature: 360 Degree Workplace Safety Initiative #${index}`
-            : `EKDKN Foundation CSR & Environment Impact Recognition #${index}`,
+                ? `National Press Feature: 360 Degree Workplace Safety Initiative #${index}`
+                : `EKDKN Foundation CSR & Environment Impact Recognition #${index}`,
         publication,
         date: `${month} ${year}`,
         featured: index <= 4
@@ -175,19 +175,17 @@ const Media = () => {
                                         setSelectedCategory(cat);
                                         setLightboxIndex(null);
                                     }}
-                                    className={`px-4.5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 ${
-                                        isActive
+                                    className={`px-4.5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 ${isActive
                                             ? 'bg-[#D33D33] text-white shadow-md shadow-[#D33D33]/25 scale-[1.02]'
                                             : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200/80'
-                                    }`}
+                                        }`}
                                 >
                                     <span>{cat}</span>
                                     <span
-                                        className={`text-xs px-2 py-0.5 rounded-full ${
-                                            isActive
+                                        className={`text-xs px-2 py-0.5 rounded-full ${isActive
                                                 ? 'bg-white/20 text-white'
                                                 : 'bg-gray-100 text-gray-500'
-                                        }`}
+                                            }`}
                                     >
                                         {count}
                                     </span>
@@ -222,33 +220,30 @@ const Media = () => {
                             <button
                                 onClick={() => setViewCols(2)}
                                 title="2 Columns"
-                                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                    viewCols === 2
+                                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${viewCols === 2
                                         ? 'bg-[#1A2130] text-white'
                                         : 'text-gray-500 hover:text-gray-800'
-                                }`}
+                                    }`}
                             >
                                 2 Col
                             </button>
                             <button
                                 onClick={() => setViewCols(3)}
                                 title="3 Columns"
-                                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                    viewCols === 3
+                                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${viewCols === 3
                                         ? 'bg-[#1A2130] text-white'
                                         : 'text-gray-500 hover:text-gray-800'
-                                }`}
+                                    }`}
                             >
                                 3 Col
                             </button>
                             <button
                                 onClick={() => setViewCols(4)}
                                 title="4 Columns"
-                                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                    viewCols === 4
+                                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${viewCols === 4
                                         ? 'bg-[#1A2130] text-white'
                                         : 'text-gray-500 hover:text-gray-800'
-                                }`}
+                                    }`}
                             >
                                 4 Col
                             </button>
@@ -278,13 +273,12 @@ const Media = () => {
                     </div>
                 ) : (
                     <div
-                        className={`grid grid-cols-1 sm:grid-cols-2 ${
-                            viewCols === 2
+                        className={`grid grid-cols-1 sm:grid-cols-2 ${viewCols === 2
                                 ? 'lg:grid-cols-2'
                                 : viewCols === 4
-                                ? 'lg:grid-cols-4'
-                                : 'lg:grid-cols-3'
-                        } gap-6 md:gap-8`}
+                                    ? 'lg:grid-cols-4'
+                                    : 'lg:grid-cols-3'
+                            } gap-6 md:gap-8`}
                     >
                         {filteredItems.map((item, index) => (
                             <div

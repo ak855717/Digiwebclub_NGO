@@ -10,6 +10,9 @@ import Safety2024 from './pages/Safety2024'
 import Environment from './pages/Environment'
 import Safety2023 from './pages/Safety2023'
 import Media from './pages/Media'
+import Gallery from './pages/Gallery'
+import Contact from './pages/Contact'
+import Career from './pages/Career'
 
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
         <Route path="/environment" element={<Environment />} />
         <Route path="/safety2023" element={<Safety2023 />} />
         <Route path="/media" element={<Media />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>

@@ -1,5 +1,5 @@
-;
-import { ArrowUpRight, } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import Logo from "../assets/logo.png"
 
 const Footer = () => {
@@ -52,12 +52,18 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-7 text-white tracking-wide">Quick Links</h3>
                         <ul className="space-y-4">
-                            {['Home', 'About Us', 'Initiatives', 'Volunteer', 'Contact Us'].map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="flex items-center gap-2.5 text-gray-400 hover:text-[#dc4c3e] transition-colors text-[0.95rem] font-medium">
+                            {[
+                                { name: 'Home', path: '/' },
+                                { name: 'About Us', path: '/about' },
+                                { name: 'Initiatives', path: '/ourCSR' },
+                                { name: 'Careers & Volunteer', path: '/career' },
+                                { name: 'Contact Us', path: '/contact' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link to={item.path} className="flex items-center gap-2.5 text-gray-400 hover:text-[#dc4c3e] transition-colors text-[0.95rem] font-medium">
                                         <span className="w-1 h-1 rounded-full bg-[#dc4c3e]"></span>
-                                        {link}
-                                    </a>
+                                        {item.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -119,7 +125,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="py-8 border-t border-white/5 text-center">
                     <p className="text-gray-400 text-sm font-medium">
-                        Copyright © 2026 EKDKN. All Rights Reserved.
+                       Copyright @2019 EK KAAM DESH KE NAAM. All Rights Reserved
                     </p>
                 </div>
 

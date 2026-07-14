@@ -71,9 +71,15 @@ const Navbar = () => {
                         <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
                             <Link to="/media">Media</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Gallery</li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Career</li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">Contact</li>
+                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                            <Link to="/gallery">Gallery</Link>
+                        </li>
+                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                            <Link to="/career">Career</Link>
+                        </li>
+                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                            <Link to="/contact">Contact</Link>
+                        </li>
                     </ul>
 
                     {/* Action Button */}
