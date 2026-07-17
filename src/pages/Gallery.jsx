@@ -1,14 +1,12 @@
-import { useState, useMemo, useEffect, useLayoutEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Hero from '../components/Hero';
 import {
-    Search,
     Maximize2,
     X,
     ChevronLeft,
     ChevronRight,
     Eye,
-    Download,
     Play,
     Pause,
     Sparkles,
@@ -40,23 +38,9 @@ rawEntries.forEach(([path, mod]) => {
     }
 });
 
-// Category list with icons & descriptions
-const categoriesList = [
-    'All',
-    'Workplace Safety',
-    'Environment & Green',
-    'Community & CSR',
-    'Awards & Summits'
-];
-
 // Build rich gallery items
 const galleryItems = Array.from(stemMap.values()).map((item, idx) => {
     const index = idx + 1;
-    let category = 'Workplace Safety';
-    if (index % 4 === 1) category = 'Workplace Safety';
-    else if (index % 4 === 2) category = 'Environment & Green';
-    else if (index % 4 === 3) category = 'Community & CSR';
-    else category = 'Awards & Summits';
 
     const year = index % 2 === 0 ? '2024' : '2025';
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Oct', 'Nov', 'Dec'];
@@ -66,15 +50,12 @@ const galleryItems = Array.from(stemMap.values()).map((item, idx) => {
         id: index,
         src: item.src,
         filename: item.filename,
-        category,
         date: `${month} ${year}`,
         featured: index <= 5
     };
 });
 
 const Gallery = () => {
-    const [selectedCategory, setSelectedCategory] = useState('All');
-    const [searchQuery, setSearchQuery] = useState('');
     const [gridCols, setGridCols] = useState(3); // 2, 3, or 4
     const [lightboxIndex, setLightboxIndex] = useState(null);
     const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(false);
@@ -88,34 +69,19 @@ const Gallery = () => {
     const lightboxImgRef = useRef(null);
     const prevLightboxIndexRef = useRef(null);
 
-    // Filtered & Sorted items
-    const filteredItems = useMemo(() => {
-        let list = galleryItems.filter((item) => {
-            const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
-            const matchesSearch =
-                searchQuery.trim() === '' ||
-                item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                `photo #${item.id}`.includes(searchQuery.toLowerCase());
-            return matchesCategory && matchesSearch;
-        });
-
-
-        return list;
-    }, [selectedCategory, searchQuery]);
-
     // Active item in Lightbox
-    const activeItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
+    const activeItem = lightboxIndex !== null ? galleryItems[lightboxIndex] : null;
 
     // Slideshow interval
     useEffect(() => {
         let interval;
-        if (isSlideshowPlaying && lightboxIndex !== null && filteredItems.length > 1) {
+        if (isSlideshowPlaying && lightboxIndex !== null && galleryItems.length > 1) {
             interval = setInterval(() => {
-                setLightboxIndex((prev) => (prev + 1) % filteredItems.length);
+                setLightboxIndex((prev) => (prev + 1) % galleryItems.length);
             }, 3500);
         }
         return () => clearInterval(interval);
-    }, [isSlideshowPlaying, lightboxIndex, filteredItems.length]);
+    }, [isSlideshowPlaying, lightboxIndex]);
 
     // Keyboard navigation
     useEffect(() => {
@@ -126,10 +92,10 @@ const Gallery = () => {
                 setIsSlideshowPlaying(false);
             }
             if (e.key === 'ArrowRight') {
-                setLightboxIndex((prev) => (prev + 1) % filteredItems.length);
+                setLightboxIndex((prev) => (prev + 1) % galleryItems.length);
             }
             if (e.key === 'ArrowLeft') {
-                setLightboxIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
+                setLightboxIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
             }
             if (e.key === ' ') {
                 e.preventDefault();
@@ -138,7 +104,7 @@ const Gallery = () => {
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [lightboxIndex, filteredItems.length]);
+    }, [lightboxIndex]);
 
     // --- GSAP: page-load intro (header card, pillar mini-cards, moments counter) ---
     useLayoutEffect(() => {
@@ -188,7 +154,7 @@ const Gallery = () => {
                 );
             }
 
-            if (filteredItems.length === 0 && emptyStateRef.current) {
+            if (galleryItems.length === 0 && emptyStateRef.current) {
                 gsap.fromTo(
                     emptyStateRef.current,
                     { opacity: 0, y: 16 },
@@ -198,7 +164,7 @@ const Gallery = () => {
         }, showcaseRef);
 
         return () => ctx.revert();
-    }, [filteredItems, gridCols]);
+    }, [gridCols]);
 
     // --- GSAP: lightbox open + slide-to-slide crossfade ---
     useLayoutEffect(() => {
@@ -284,119 +250,45 @@ const Gallery = () => {
                 </div>
             </div>
 
-            {/* Controls Bar: Category Pills + Search + Sort + Layout Modes */}
+            {/* Controls Bar: Grid Layout Selector */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-6 border-b border-gray-200">
-                    {/* Category Filter Pills */}
-                    <div className="flex flex-wrap items-center gap-2">
-                        {categoriesList.map((cat) => {
-                            const count =
-                                cat === 'All'
-                                    ? galleryItems.length
-                                    : galleryItems.filter((i) => i.category === cat).length;
-                            const isActive = selectedCategory === cat;
-
-                            return (
-                                <button
-                                    key={cat}
-                                    onClick={() => {
-                                        setSelectedCategory(cat);
-                                        setLightboxIndex(null);
-                                    }}
-                                    className={`px-4.5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2.5 ${
-                                        isActive
-                                            ? 'bg-[#D33D33] text-white shadow-md shadow-[#D33D33]/25 scale-[1.02]'
-                                            : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200/80'
-                                    }`}
-                                >
-                                    <span>{cat}</span>
-                                    <span
-                                        className={`text-xs px-2 py-0.5 rounded-full ${
-                                            isActive
-                                                ? 'bg-white/20 text-white'
-                                                : 'bg-gray-100 text-gray-500'
-                                        }`}
-                                    >
-                                        {count}
-                                    </span>
-                                </button>
-                            );
-                        })}
-                    </div>
-
-                    {/* Search Input, Sort & Layout Toggles */}
-                    <div className="flex flex-wrap justify-center items-center gap-3">
-                        {/* Search Bar */}
-                        <div className="relative flex-1 sm:flex-initial sm:w-64">
-                            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                            <input
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Search gallery..."
-                                className="w-full pl-10 pr-9 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:border-[#D33D33] focus:ring-2 focus:ring-[#D33D33]/15 transition-all"
-                            />
-                            {searchQuery && (
-                                <button
-                                    onClick={() => setSearchQuery('')}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                                >
-                                    <X className="w-4 h-4" />
-                                </button>
-                            )}
-                        </div>
-
-                        {/* Grid Columns Toggle (Only in Grid View) */}
-                     
-                            <div className="hidden sm:flex items-center bg-white border border-gray-200 rounded-full p-1 shadow-2xs">
-                                <button
-                                    onClick={() => setGridCols(2)}
-                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                        gridCols === 2 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
-                                    }`}
-                                >
-                                    2 Col
-                                </button>
-                                <button
-                                    onClick={() => setGridCols(3)}
-                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                        gridCols === 3 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
-                                    }`}
-                                >
-                                    3 Col
-                                </button>
-                                <button
-                                    onClick={() => setGridCols(4)}
-                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                        gridCols === 4 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
-                                    }`}
-                                >
-                                    4 Col
-                                </button>
-                            </div>
-                       
+                <div className="flex justify-end pb-6 border-b border-gray-200">
+                    {/* Grid Columns Toggle */}
+                    <div className="hidden sm:flex items-center bg-white border border-gray-200 rounded-full p-1 shadow-2xs">
+                        <button
+                            onClick={() => setGridCols(2)}
+                            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+                                gridCols === 2 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
+                            }`}
+                        >
+                            2 Col
+                        </button>
+                        <button
+                            onClick={() => setGridCols(3)}
+                            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+                                gridCols === 3 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
+                            }`}
+                        >
+                            3 Col
+                        </button>
+                        <button
+                            onClick={() => setGridCols(4)}
+                            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+                                gridCols === 4 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
+                            }`}
+                        >
+                            4 Col
+                        </button>
                     </div>
                 </div>
             </div>
 
             {/* MAIN GALLERY SHOWCASE AREA */}
             <div ref={showcaseRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-                {filteredItems.length === 0 ? (
+                {galleryItems.length === 0 ? (
                     <div ref={emptyStateRef} className="text-center py-20 bg-white rounded-3xl border border-gray-100 shadow-xs">
                         <ImageIcon className="w-14 h-14 text-gray-300 mx-auto mb-3" />
                         <h3 className="text-lg font-bold text-gray-700">No photos found</h3>
-                        <p className="text-sm text-gray-500 mt-1">
-                            Try adjusting your category filter or search term.
-                        </p>
-                        <button
-                            onClick={() => {
-                                setSelectedCategory('All');
-                                setSearchQuery('');
-                            }}
-                            className="mt-5 px-6 py-2.5 bg-[#D33D33] text-white text-sm font-semibold rounded-full hover:bg-[#b9352c] transition-colors"
-                        >
-                            Reset All Filters
-                        </button>
                     </div>
                 ) : (
                     /* GRID VIEW MODE (Customizable 2 / 3 / 4 Columns) */
@@ -409,7 +301,7 @@ const Gallery = () => {
                                 : 'lg:grid-cols-3'
                         } gap-6 md:gap-8`}
                     >
-                        {filteredItems.map((item, index) => (
+                        {galleryItems.map((item, index) => (
                             <GalleryCard
                                 key={item.id}
                                 item={item}
@@ -470,11 +362,8 @@ const Gallery = () => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <div className="flex items-center gap-3">
-                                <span className="px-3.5 py-1 bg-[#D33D33] text-white rounded-full text-xs font-bold uppercase tracking-wider">
-                                    {activeItem.category}
-                                </span>
                                 <span className="text-sm font-semibold text-gray-300">
-                                    {lightboxIndex + 1} / {filteredItems.length}
+                                    {lightboxIndex + 1} / {galleryItems.length}
                                 </span>
                             </div>
 
@@ -506,17 +395,6 @@ const Gallery = () => {
                                     )}
                                 </button>
 
-
-                                {/* Download Button */}
-                                <a
-                                    href={activeItem.src}
-                                    download={activeItem.filename}
-                                    className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                                    title="Download high resolution photo"
-                                >
-                                    <Download className="w-4 h-4" />
-                                </a>
-
                                 {/* Close Window Button */}
                                 <button
                                     onClick={() => {
@@ -537,11 +415,11 @@ const Gallery = () => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Navigation Left Arrow */}
-                            {filteredItems.length > 1 && (
+                            {galleryItems.length > 1 && (
                                 <button
                                     onClick={() =>
                                         setLightboxIndex(
-                                            (prev) => (prev - 1 + filteredItems.length) % filteredItems.length
+                                            (prev) => (prev - 1 + galleryItems.length) % galleryItems.length
                                         )
                                     }
                                     className="absolute left-4 md:left-8 p-3.5 rounded-full bg-black/50 hover:bg-[#D33D33] text-white border border-white/10 transition-all duration-200 z-20 shadow-xl"
@@ -562,10 +440,10 @@ const Gallery = () => {
                             </div>
 
                             {/* Navigation Right Arrow */}
-                            {filteredItems.length > 1 && (
+                            {galleryItems.length > 1 && (
                                 <button
                                     onClick={() =>
-                                        setLightboxIndex((prev) => (prev + 1) % filteredItems.length)
+                                        setLightboxIndex((prev) => (prev + 1) % galleryItems.length)
                                     }
                                     className="absolute right-4 md:right-8 p-3.5 rounded-full bg-black/50 hover:bg-[#D33D33] text-white border border-white/10 transition-all duration-200 z-20 shadow-xl"
                                     title="Next Photo (Right Arrow)"
@@ -591,7 +469,7 @@ const Gallery = () => {
 
                             {/* Thumbnail Strip */}
                             <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 overflow-x-auto pb-2 px-2 scrollbar-none">
-                                {filteredItems.map((thumb, idx) => {
+                                {galleryItems.map((thumb, idx) => {
                                     const isCurrent = idx === lightboxIndex;
                                     return (
                                         <button
@@ -635,13 +513,6 @@ const GalleryCard = ({ item, onClick }) => {
                     loading="lazy"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-600"
                 />
-
-                {/* Top Overlay Badges */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                    <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold rounded-full uppercase tracking-wider">
-                        {item.category}
-                    </span>
-                </div>
 
                 {/* Hover Reveal Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">

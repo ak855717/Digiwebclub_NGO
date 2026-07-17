@@ -179,7 +179,7 @@ const Contact = () => {
                     <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-gray-600 text-sm sm:text-base mt-3">
+                    <p className="text-gray-600 text-sm sm:text-base mt-3"> 
                         Everything you need to know about our corporate CSR partnerships, 80G tax exemptions, workplace safety training, and volunteering opportunities.
                     </p>
                 </div>

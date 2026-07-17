@@ -92,8 +92,8 @@ const Footer = () => {
                 {/* Main Content Columns */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-14">
 
-                    {/* Col 1: Quick Links (3 spans) */}
-                    <div className="lg:col-span-3">
+                    {/* Col 1: Quick Links (4 spans) */}
+                    <div className="lg:col-span-4">
                         <h3 className="text-base font-bold mb-6 text-white tracking-wider uppercase border-l-2 border-[#D33D33] pl-3">
                             Quick Links
                         </h3>
@@ -112,8 +112,8 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Col 2: Awards & Conferences (3 spans) */}
-                    <div className="lg:col-span-3">
+                    {/* Col 2: Awards & Conferences (4 spans) */}
+                    <div className="lg:col-span-4">
                         <h3 className="text-base font-bold mb-6 text-white tracking-wider uppercase border-l-2 border-[#D33D33] pl-3">
                             Awards & Conferences
                         </h3>
@@ -141,8 +141,8 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Col 3: Contact Info (3 spans) */}
-                    <div className="lg:col-span-3">
+                    {/* Col 3: Contact Info (4 spans) */}
+                    <div className="sm:col-span-2 lg:col-span-4">
                         <h3 className="text-base font-bold mb-6 text-white tracking-wider uppercase border-l-2 border-[#D33D33] pl-3">
                             Get In Touch
                         </h3>
@@ -171,37 +171,6 @@ const Footer = () => {
                                 <span>Mon - Sat | 9:00 AM - 6:00 PM</span>
                             </li>
                         </ul>
-                    </div>
-
-                    {/* Col 4: Newsletter Signup (3 spans) */}
-                    <div className="lg:col-span-3">
-                        <h3 className="text-base font-bold mb-6 text-white tracking-wider uppercase border-l-2 border-[#D33D33] pl-3">
-                            Stay Updated
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                            Subscribe to our newsletter for updates on national safety drives, impact stories, and upcoming campaigns.
-                        </p>
-                        <form
-                            onSubmit={(e) => e.preventDefault()}
-                            className="relative flex items-center border border-white/20 rounded-lg p-1.5 bg-white/5 focus-within:border-[#D33D33] transition-colors"
-                        >
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="bg-transparent w-full px-3 py-1.5 text-sm text-white placeholder-gray-400 focus:outline-none"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                aria-label="Subscribe"
-                                className="shrink-0 w-9 h-9 bg-[#D33D33] hover:bg-[#b9352c] rounded-md flex items-center justify-center transition-colors"
-                            >
-                                <ArrowUpRight className="w-4 h-4 text-white" />
-                            </button>
-                        </form>
-                        <p className="text-[11px] text-gray-500 mt-3">
-                            We respect your privacy. Unsubscribe at any time.
-                        </p>
                     </div>
 
                 </div>

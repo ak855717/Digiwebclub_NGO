@@ -70,8 +70,8 @@ const OurService = () => {
         {/* Top Header Row */}
         <div className="service-header-row flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <div className="service-header-item inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-slate-800 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#DF4A43]"></span>
+            <div className="service-header-item inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] rounded-full text-sm font-semibold text-white mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
               Our Services
             </div>
             <h2 className="service-header-item text-4xl md:text-[44px] font-bold text-slate-900 leading-[1.2]">
@@ -108,9 +108,9 @@ const OurService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   We offer a literacy-numeracy enhancement project to reduce educational inequalities for children.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </a> */}
               </div>
 
               {/* Service Item 2 */}
@@ -122,9 +122,9 @@ const OurService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   Through the DRI initiative, we conduct plantation drives in barren lands, schools, and parks.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </a> */}
               </div>
 
               {/* Service Item 3 */}
@@ -136,9 +136,9 @@ const OurService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   Providing assistance and empowerment programs to specially-abled and impoverished families.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </a> */}
               </div>
 
               {/* Service Item 4 */}
@@ -150,9 +150,9 @@ const OurService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   Our healthcare initiatives include free medical camps, health check-ups, and emergency aid.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </a> */}
               </div>
 
             </div>

@@ -155,16 +155,16 @@ const Hero = () => {
 
 
           {/* Right Column */}
-          <div className="flex flex-col justify-center items-center lg:items-end lg:flex-1 w-full py-4 md:py-8 mt-10">
+          <div className="flex flex-col justify-center items-end lg:flex-1 w-full py-4 md:py-8 pr-8">
 
 
             {/* Bottom section: Review Card */}
             <div
-              className="hero-card bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-full max-w-[280px] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-transform duration-300 mt-30 cursor-pointer"
+              className="hero-card bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-3 w-full max-w-[280px] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-transform duration-300 mt-55 cursor-pointer"
               onClick={() => setIsModalOpen(true)}
             >
               <img src={upcoming} alt="upcoming event" className="rounded-xl w-full max-h-[300px] object-cover" />
-              <p className="mt-4 text-[15px] text-gray-100 font-semibold leading-snug text-center">
+              <p className="my-2 text-[15px] text-gray-100 font-semibold leading-snug text-center">
                 Upcoming Events
               </p>
             </div>

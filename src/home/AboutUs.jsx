@@ -116,8 +116,8 @@ const AboutUs = () => {
           {/* Right side: Content */}
           <div className="about-content-wrap flex flex-col">
             <div>
-              <div className="about-text-anim inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-slate-800 mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DF4A43]"></span>
+              <div className="about-text-anim inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] text-white rounded-full text-sm font-semibold mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
                 Who We Are
               </div>
               <h2 className="about-text-anim text-3xl md:text-4xl lg:text-[35px] font-bold text-[#DF4A43] mb-6 leading-[1.25]">

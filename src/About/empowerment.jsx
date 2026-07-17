@@ -85,9 +85,18 @@ const Empowerment = () => {
     return (
         <section ref={sectionRef} className="py-12 md:py-16 bg-white overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <div className="empowerment-box bg-[#E5E3DA] rounded-3xl sm:rounded-[28px] p-6 sm:p-10 md:p-12 lg:p-14 border border-gray-200/40 shadow-xs text-center">
+                <div className="empowerment-box relative bg-[#1a2130] text-white rounded-3xl sm:rounded-[28px] p-6 sm:p-10 md:p-12 lg:p-14 border border-white/10 shadow-2xl overflow-hidden text-center">
+                    {/* Subtle chevron background pattern */}
+                    <div
+                        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                        style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5l-20-20V4l20 20 20-20V.5l-20 20z' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+                            backgroundSize: '40px 40px'
+                        }}
+                    />
+
                     {/* Badge */}
-                    <div className="empowerment-text-wrap">
+                    <div className="empowerment-text-wrap relative z-10">
                         <div className="empowerment-text-anim">
                             <span className="inline-block bg-white rounded-md px-3.5 py-1.5 text-xs sm:text-sm font-bold tracking-wider text-[#1A202C] uppercase shadow-2xs">
                                 EMPOWERMENT
@@ -95,12 +104,12 @@ const Empowerment = () => {
                         </div>
 
                         {/* Title */}
-                        <h2 className="empowerment-text-anim mt-4 sm:mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#1A202C] tracking-tight leading-tight">
+                        <h2 className="empowerment-text-anim mt-4 sm:mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-white tracking-tight leading-tight">
                             Uplifting Communities, Shaping Futures
                         </h2>
 
                         {/* Description */}
-                        <p className="empowerment-text-anim mt-4 sm:mt-5 text-[#6B7280] text-sm sm:text-base leading-relaxed">
+                        <p className="empowerment-text-anim mt-4 sm:mt-5 text-gray-300 text-sm sm:text-base leading-relaxed">
                             We observed huge untapped intellect in slums and realised the need
                             for enabling them to be the nation&apos;s strength. With this
                             thought we started motivating them for higher education by giving
@@ -116,16 +125,16 @@ const Empowerment = () => {
                     </div>
 
                     {/* Sectors Grid */}
-                    <div className="empowerment-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-8 mt-8 sm:mt-10">
+                    <div className="empowerment-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-8 mt-8 sm:mt-10 relative z-10">
                         {sectors.map((sector, index) => (
                             <div
                                 key={index}
                                 className="empowerment-sector-card flex flex-col items-center gap-3.5 group cursor-pointer"
                             >
-                                <div className="w-20 h-20 sm:w-20 sm:h-20 rounded-full text-white flex items-center justify-center shrink-0 shadow-sm bg-[#D33D33] group-hover:scale-105 transition-all duration-300">
+                                <div className="w-20 h-20 sm:w-20 sm:h-20 rounded-full text-white flex items-center justify-center shrink-0 shadow-lg bg-[#D33D33] group-hover:scale-105 group-hover:bg-[#b9352c] transition-all duration-300">
                                     {sector.icon}
                                 </div>
-                                <span className="font-semibold text-base sm:text-xl text-[#D33D33] transition-colors duration-300">
+                                <span className="font-semibold text-base sm:text-xl text-white group-hover:text-[#D33D33] transition-colors duration-300">
                                     {sector.name}
                                 </span>
                             </div>

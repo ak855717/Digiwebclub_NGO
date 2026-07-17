@@ -116,8 +116,8 @@ const WhyChoose = () => {
           <div className="why-content-wrap flex flex-col">
 
             <div className="mb-10">
-              <div className="why-text-anim inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm font-semibold text-slate-800 mb-6 shadow-sm border border-gray-100">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DF4A43]"></span>
+              <div className="why-text-anim inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] rounded-full text-sm font-semibold text-white mb-6 shadow-sm border border-gray-100">
+                <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
                 Our Vision & Mission
               </div>
               <h2 className="why-text-anim text-4xl md:text-[44px] font-bold text-slate-900 mb-6 leading-[1.15]">

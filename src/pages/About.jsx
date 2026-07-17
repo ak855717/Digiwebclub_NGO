@@ -6,7 +6,6 @@ import OurStory from '../home/ourStory'
 import Objective from '../About/objective'
 import Faq from '../home/faq'
 import Reviews from '../home/reviews'
-import OurCauses from '../home/ourCauses'
 
 
 const About = () => {
@@ -16,7 +15,6 @@ const About = () => {
             <AboutUs />
             <Approach />
             <Empowerment />
-            <OurCauses />
             <OurStory />
             <Objective />
             <Reviews />

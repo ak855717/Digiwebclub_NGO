@@ -7,7 +7,7 @@ import { Plus, Minus, Star, Heart } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Faq = () => {
-    const [openIndex, setOpenIndex] = useState(1);
+    const [openIndex, setOpenIndex] = useState(0);
     const sectionRef = useRef(null);
 
     const faqs = [
@@ -161,9 +161,9 @@ const Faq = () => {
 
                     {/* Right Column - FAQ Accordion */}
                     <div className="faq-right-col w-full lg:w-1/2 pt-16 lg:pt-0">
-                        <div className="faq-right-header inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 mb-6 shadow-sm">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
-                            <span className="text-sm font-semibold text-gray-700">Frequently Asked Questions</span>
+                        <div className="faq-right-header inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#dc4c3e] border border-gray-200 mb-6 shadow-sm">
+                            <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                            <span className="text-sm font-semibold text-white">Frequently Asked Questions</span>
                         </div>
 
                         <h2 className="faq-right-header text-4xl md:text-[2.75rem] font-bold text-slate-900 mb-10 tracking-tight leading-[1.15]">

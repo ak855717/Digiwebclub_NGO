@@ -25,7 +25,7 @@ const inquiryTypes = [
 ];
 
 const ContactFormSection = () => {
-    const [selectedInquiry, setSelectedInquiry] = useState('general');
+    const [selectedInquiry] = useState('general');
 
     // Form states
     const [formData, setFormData] = useState({
@@ -110,33 +110,6 @@ const ContactFormSection = () => {
                     <p className="text-gray-600 mt-2 text-sm sm:text-base">
                         Whether you want to launch an occupational safety workshop, initiate a green corporate CSR partnership, or volunteer for our upcoming drives, our desk is ready.
                     </p>
-
-                    {/* Inquiry Type Pills */}
-                    <div className="mt-8">
-                        <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">
-                            Select Inquiry Category
-                        </label>
-                        <div className="flex flex-wrap gap-2.5">
-                            {inquiryTypes.map(item => {
-                                const IconComp = item.icon;
-                                const isSelected = selectedInquiry === item.id;
-                                return (
-                                    <button
-                                        key={item.id}
-                                        type="button"
-                                        onClick={() => setSelectedInquiry(item.id)}
-                                        className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${isSelected
-                                            ? 'bg-[#D33D33] text-white shadow-md shadow-red-500/25 scale-[1.02]'
-                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200/80'
-                                            }`}
-                                    >
-                                        <IconComp className="w-4 h-4" />
-                                        {item.label}
-                                    </button>
-                                );
-                            })}
-                        </div>
-                    </div>
 
                     {/* SUCCESS STATE */}
                     {submittedData ? (

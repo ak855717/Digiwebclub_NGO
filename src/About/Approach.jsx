@@ -35,8 +35,8 @@ const Approach = () => {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto">
           {/* Tag Pill */}
-          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium text-gray-700">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D33D33]"></span>
+          <div className="inline-flex items-center gap-2 bg-[#D33D33] rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
+            <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
             Our Approach
           </div>
 

@@ -70,11 +70,10 @@ const Navbar = () => {
                                             key={index}
                                             to={item.href}
                                             onClick={() => setIsAwardsOpen(false)}
-                                            className={`block px-5 py-3.5 text-[15px] transition-colors ${
-                                                isActive(item.href)
+                                            className={`block px-5 py-3.5 text-[15px] transition-colors ${isActive(item.href)
                                                     ? 'text-[#D33D33] font-medium bg-gray-50'
                                                     : 'font-normal text-gray-700 hover:bg-gray-50 hover:text-[#D33D33]'
-                                            } ${index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''}`}
+                                                } ${index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''}`}
                                         >
                                             {item.name}
                                         </Link>
@@ -88,6 +87,9 @@ const Navbar = () => {
                         </li>
                         <li className={getLinkClass('/gallery')}>
                             <Link to="/gallery">Gallery</Link>
+                        </li>
+                        <li className={getLinkClass('/blog')}>
+                            <Link to="/blog">Blog</Link>
                         </li>
                         <li className={getLinkClass('/career')}>
                             <Link to="/career">Career</Link>

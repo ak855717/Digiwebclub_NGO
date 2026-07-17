@@ -14,6 +14,8 @@ import Media from './pages/Media'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Career from './pages/Career'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="/safety2023" element={<Safety2023 />} />
         <Route path="/media" element={<Media />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
