@@ -1,9 +1,25 @@
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
 import defaultBgImage from '../assets/child_support.png';
 
 const Hero = (props) => {
+    const heroRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.from('.hero-content-anim', {
+            opacity: 0,
+            y: 35,
+            duration: 0.9,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+    }, { scope: heroRef });
+
     return (
         <section
+            ref={heroRef}
             className="relative w-full min-h-[340px] md:min-h-[400px] lg:min-h-[440px] flex items-center bg-cover bg-center bg-no-repeat overflow-hidden"
             style={{
                 backgroundImage: `url(${defaultBgImage})`
@@ -15,12 +31,12 @@ const Hero = (props) => {
             {/* Content */}
             <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-16 md:pt-36 md:pb-20">
                 <div className="max-w-xl">
-                    <h1 className="text-4xl sm:text-5xl md:text-[54px] font-bold text-white tracking-tight leading-tight">
+                    <h1 className="hero-content-anim text-4xl sm:text-5xl md:text-[54px] font-bold text-white tracking-tight leading-tight">
                         {props.title}
                     </h1>
 
                     {/* Breadcrumb */}
-                    <div className="mt-4 flex items-center gap-2 text-sm sm:text-[15px] font-medium text-white/90">
+                    <div className="hero-content-anim mt-4 flex items-center gap-2 text-sm sm:text-[15px] font-medium text-white/90">
                         <Link
                             to="/"
                             className="hover:text-white hover:underline transition-colors"
@@ -37,3 +53,4 @@ const Hero = (props) => {
 };
 
 export default Hero;
+

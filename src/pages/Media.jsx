@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Hero from '../components/Hero';
 import {
     Search,
@@ -7,14 +7,9 @@ import {
     ChevronLeft,
     ChevronRight,
     Newspaper,
-    Award,
     Eye,
     Download,
-    Share2,
-    Grid,
-    LayoutGrid,
     Sparkles,
-    Check,
     FileText,
     Calendar
 } from 'lucide-react';
@@ -80,7 +75,6 @@ const Media = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [viewCols, setViewCols] = useState(3); // 2, 3, or 4 columns
     const [lightboxIndex, setLightboxIndex] = useState(null);
-    const [copiedId, setCopiedId] = useState(null);
 
     // Filter media items
     const filteredItems = useMemo(() => {
@@ -287,7 +281,7 @@ const Media = () => {
                                 className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col"
                             >
                                 {/* Image Container */}
-                                <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
+                                <div className="relative aspect-4/3 bg-gray-100 overflow-hidden">
                                     <img
                                         src={item.src}
                                         alt={item.title}
@@ -306,7 +300,7 @@ const Media = () => {
                                     </div>
 
                                     {/* Hover Action Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                                         <div className="w-full flex items-center justify-between text-white">
                                             <span className="flex items-center gap-2 text-xs font-medium">
                                                 <Eye className="w-4 h-4 text-[#D33D33]" />
@@ -359,7 +353,7 @@ const Media = () => {
 
             {/* Media Inquiry & Press Contact Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-                <div className="bg-gradient-to-r from-[#1B2230] to-[#252E42] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+                <div className="bg-linear-to-r from-[#1B2230] to-[#252E42] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
                     <div className="max-w-2xl">
                         <span className="px-3 py-1 bg-[#D33D33] text-white text-xs font-bold rounded-full uppercase tracking-wider">
                             Media Inquiries
@@ -385,7 +379,7 @@ const Media = () => {
             {/* FULL-SCREEN PROFESSIONAL LIGHTBOX MODAL */}
             {activeItem && (
                 <div
-                    className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-fadeIn"
+                    className="fixed inset-0 z-100 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-fadeIn"
                     onClick={() => setLightboxIndex(null)}
                 >
                     {/* Top Action Bar */}

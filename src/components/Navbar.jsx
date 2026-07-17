@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, ArrowUpRight } from 'lucide-react';
 import Logo from "../assets/logo.png"
 
 const Navbar = () => {
     const [isAwardsOpen, setIsAwardsOpen] = useState(false);
+    const location = useLocation();
+    const pathname = location.pathname.endsWith('/') && location.pathname.length > 1
+        ? location.pathname.slice(0, -1)
+        : location.pathname;
+
+    const isActive = (path) => pathname === path;
 
     const awardsDropdown = [
         { name: "Upcoming Events", href: "/upcoming" },
@@ -12,6 +18,11 @@ const Navbar = () => {
         { name: "Past Event – Environment 2024", href: "/environment" },
         { name: "Past Event – Safety 2023", href: "/safety2023" },
     ];
+
+    const isAwardsActive = awardsDropdown.some(item => pathname === item.href);
+
+    const getLinkClass = (path) =>
+        `cursor-pointer transition-colors ${isActive(path) ? 'text-[#D33D33]' : 'hover:text-[#D33D33]'}`;
 
     return (
         <>
@@ -26,13 +37,13 @@ const Navbar = () => {
 
                     {/* Navigation Links */}
                     <ul className="hidden md:flex items-center gap-6 text-[16px] font-medium text-[#1a202c]">
-                        <li className="flex items-center gap-1 text-[#D33D33] cursor-pointer">
+                        <li className={getLinkClass('/')}>
                             <Link to="/">Home</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                        <li className={getLinkClass('/about')}>
                             <Link to="/about">About</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                        <li className={getLinkClass('/ourCSR')}>
                             <Link to="/ourCSR">Our CSR</Link>
                         </li>
 
@@ -43,11 +54,11 @@ const Navbar = () => {
                             onMouseLeave={() => setIsAwardsOpen(false)}
                         >
                             <div
-                                className="flex items-center gap-1 hover:text-[#D33D33] transition-colors py-1"
+                                className={`flex items-center gap-1 transition-colors py-1 ${isAwardsActive || isAwardsOpen ? 'text-[#D33D33]' : 'hover:text-[#D33D33]'}`}
                                 onClick={() => setIsAwardsOpen(!isAwardsOpen)}
                             >
                                 <span>Awards & Conference</span>
-                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAwardsOpen ? 'rotate-180 text-[#D33D33]' : ''}`} />
+                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(isAwardsOpen || isAwardsActive) ? 'text-[#D33D33]' : ''} ${isAwardsOpen ? 'rotate-180' : ''}`} />
                             </div>
 
                             {/* Dropdown Menu */}
@@ -55,29 +66,33 @@ const Navbar = () => {
                                 }`}>
                                 <div className="bg-white rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-gray-200 overflow-hidden">
                                     {awardsDropdown.map((item, index) => (
-                                        <a
+                                        <Link
                                             key={index}
-                                            href={item.href}
-                                            className={`block px-5 py-3.5 text-[15px] font-normal text-gray-700 hover:bg-gray-50 hover:text-[#D33D33] transition-colors ${index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''
-                                                }`}
+                                            to={item.href}
+                                            onClick={() => setIsAwardsOpen(false)}
+                                            className={`block px-5 py-3.5 text-[15px] transition-colors ${
+                                                isActive(item.href)
+                                                    ? 'text-[#D33D33] font-medium bg-gray-50'
+                                                    : 'font-normal text-gray-700 hover:bg-gray-50 hover:text-[#D33D33]'
+                                            } ${index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''}`}
                                         >
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
                         </li>
 
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                        <li className={getLinkClass('/media')}>
                             <Link to="/media">Media</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                        <li className={getLinkClass('/gallery')}>
                             <Link to="/gallery">Gallery</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                        <li className={getLinkClass('/career')}>
                             <Link to="/career">Career</Link>
                         </li>
-                        <li className="cursor-pointer hover:text-[#D33D33] transition-colors">
+                        <li className={getLinkClass('/contact')}>
                             <Link to="/contact">Contact</Link>
                         </li>
                     </ul>

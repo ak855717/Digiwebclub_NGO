@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import heroslider1 from '../assets/home/hero-slider1.webp'
 import heroslider2 from '../assets/home/hero-slider2.webp'
 import heroslider3 from '../assets/home/hero-slider3.webp'
@@ -13,6 +15,7 @@ import upcoming from '../assets/home/upcoming.webp'
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const containerRef = useRef(null);
 
   const hero = [
     {
@@ -56,8 +59,39 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [hero.length]);
 
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    tl.from('.hero-badge', {
+      opacity: 0,
+      y: -25,
+      duration: 0.8
+    })
+    .from('.hero-title', {
+      opacity: 0,
+      y: 40,
+      duration: 1
+    }, '-=0.4')
+    .from('.hero-desc', {
+      opacity: 0,
+      y: 30,
+      duration: 0.9
+    }, '-=0.6')
+    .from('.hero-video', {
+      opacity: 0,
+      scale: 0.88,
+      duration: 1.1,
+      ease: 'back.out(1.4)'
+    }, '-=0.5')
+    .from('.hero-card', {
+      opacity: 0,
+      x: 50,
+      duration: 1
+    }, '-=0.8');
+  }, { scope: containerRef });
+
   return (
-    <section className="relative w-full min-h-screen grid overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-screen grid overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-slate-900">
         {hero.map((item, index) => (
@@ -84,7 +118,7 @@ const Hero = () => {
             {/* Top section: Badge and Paragraph */}
             <div className="">
               {/* Badge */}
-              <div className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md rounded-full pr-5 py-1.5 border border-white/10 shadow-lg cursor-default">
+              <div className="hero-badge inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md rounded-full pr-5 py-1.5 border border-white/10 shadow-lg cursor-default">
                 <div className="flex -space-x-2 pl-1">
                   <div className="w-8 h-8 rounded-full border-2 border-slate-900 bg-[#D33D33] flex items-center justify-center text-xs text-white">★</div>
                 </div>
@@ -92,18 +126,18 @@ const Hero = () => {
               </div>
 
               {/* Headline */}
-              <h1 className="mt-4 text-5xl sm:text-6xl lg:text-[4rem] font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
+              <h1 className="hero-title mt-4 text-5xl sm:text-6xl lg:text-[4rem] font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
                 Welcome to Ek Kaam Desh ke Naam
               </h1>
 
               {/* Paragraph */}
-              <p className="mt-4 md:mt-6 max-w-lg text-[16px] md:text-lg text-gray-200/90 font-medium leading-relaxed tracking-wide">
+              <p className="hero-desc mt-4 md:mt-6 max-w-lg text-[16px] md:text-lg text-gray-200/90 font-medium leading-relaxed tracking-wide">
                 Support and Educate specially-abled and impoverished children. Every contribution adds up to real change providing children with sustainable support programs.
               </p>
             </div>
 
             {/* Top section: Video */}
-            <div className="relative group cursor-pointer w-full max-w-md lg:max-w-[380px] aspect-video mt-10">
+            <div className="hero-video relative group cursor-pointer w-full max-w-md lg:max-w-[380px] aspect-video mt-10">
               <div className="w-full h-full rounded-2xl bg-black/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:border-white/60 transition-all duration-300 relative z-10 hover:scale-[1.02] shadow-2xl overflow-hidden">
                 <video
                   src="https://ekdkn.com/wp-content/uploads/2026/07/AQPnYXXvEIkQEA7RZrvUAEQ7dfebjkDu_YNgc2d8So64RplV6HgZ2FKLTFoS8gSXMqm8QVQPG5VQCX9YaEL57ZxALDMD-vsIBSxgEj1pJg.mp4"
@@ -126,7 +160,7 @@ const Hero = () => {
 
             {/* Bottom section: Review Card */}
             <div
-              className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-full max-w-[280px] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-transform duration-300 mt-30 cursor-pointer"
+              className="hero-card bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-full max-w-[280px] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-transform duration-300 mt-30 cursor-pointer"
               onClick={() => setIsModalOpen(true)}
             >
               <img src={upcoming} alt="upcoming event" className="rounded-xl w-full max-h-[300px] object-cover" />

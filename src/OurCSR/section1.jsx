@@ -1,8 +1,78 @@
 
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Section1 = (props) => {
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.csr-sec1-box', {
+      opacity: 0,
+      scale: 0.96,
+      y: 40,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    gsap.from('.csr-sec1-img1', {
+      opacity: 0,
+      x: -40,
+      duration: 0.8,
+      delay: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    gsap.from('.csr-sec1-text', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.15,
+      delay: 0.3,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    gsap.from('.csr-sec1-img2', {
+      opacity: 0,
+      x: 40,
+      duration: 0.8,
+      delay: 0.4,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, { scope: sectionRef });
+
   return (
-    <section className="py-3 md:py-5 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="relative bg-[#2A323D] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl overflow-hidden">
+    <section ref={sectionRef} className="py-3 md:py-5 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <div className="csr-sec1-box relative bg-[#2A323D] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl overflow-hidden">
         {/* Subtle Dotted Globe / World Map Watermark Background */}
         <div className="absolute top-0 left-0 w-72 sm:w-96 h-72 sm:h-96 opacity-15 pointer-events-none select-none -translate-x-6 -translate-y-6">
           <svg
@@ -92,7 +162,7 @@ const Section1 = (props) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
           {/* Left Column: Image 1 */}
           <div className="lg:col-span-4">
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-white/5 bg-gray-800">
+            <div className="csr-sec1-img1 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-white/5 bg-gray-800">
               <img
                 src={props.image1}
                 alt="Shakurpur Basti community children"
@@ -103,17 +173,17 @@ const Section1 = (props) => {
 
           {/* Center Column: Text Details */}
           <div className="lg:col-span-4 flex flex-col justify-center py-2">
-            <h3 className="text-[#E94A3F] font-bold text-base sm:text-lg tracking-wider uppercase mb-4">
+            <h3 className="csr-sec1-text text-[#E94A3F] font-bold text-base sm:text-lg tracking-wider uppercase mb-4">
               {props.title}
             </h3>
-            <p className="text-gray-200 text-sm sm:text-[15px] md:text-base leading-relaxed font-normal">
+            <p className="csr-sec1-text text-gray-200 text-sm sm:text-[15px] md:text-base leading-relaxed font-normal">
               {props.description}
             </p>
           </div>
 
           {/* Right Column: Image 2 */}
           <div className="lg:col-span-4">
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-white/5 bg-gray-800">
+            <div className="csr-sec1-img2 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-white/5 bg-gray-800">
               <img
                 src={props.image2}
                 alt="Shakurpur Basti children with distribution items"

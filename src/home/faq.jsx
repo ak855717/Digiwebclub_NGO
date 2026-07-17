@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Plus, Minus, Star, Heart } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Faq = () => {
     const [openIndex, setOpenIndex] = useState(1);
+    const sectionRef = useRef(null);
 
     const faqs = [
         {
@@ -32,26 +38,87 @@ const Faq = () => {
         }
     ];
 
+    useGSAP(() => {
+        gsap.from('.faq-left-img', {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.faq-left-col',
+                start: 'top 80%'
+            }
+        });
+
+        gsap.from('.faq-badge-contact', {
+            opacity: 0,
+            scale: 0,
+            duration: 0.8,
+            delay: 0.3,
+            ease: 'back.out(1.7)',
+            scrollTrigger: {
+                trigger: '.faq-left-col',
+                start: 'top 80%'
+            }
+        });
+
+        gsap.from('.faq-badge-review', {
+            opacity: 0,
+            y: 45,
+            duration: 0.9,
+            delay: 0.45,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.faq-left-col',
+                start: 'top 80%'
+            }
+        });
+
+        gsap.from('.faq-right-header', {
+            opacity: 0,
+            y: 35,
+            duration: 0.9,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.faq-right-col',
+                start: 'top 85%'
+            }
+        });
+
+        gsap.from('.faq-item', {
+            opacity: 0,
+            y: 30,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.faq-accordion-list',
+                start: 'top 85%'
+            }
+        });
+    }, { scope: sectionRef });
+
     return (
-        <section className="py-24 bg-[#f8f9fa] font-sans overflow-hidden">
+        <section ref={sectionRef} className="py-24 bg-[#f8f9fa] font-sans overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center lg:items-start">
 
                     {/* Left Column - Image & Floating Elements */}
-                    <div className="w-full max-w-[480px] lg:w-1/2 relative mt-8 lg:mt-0">
+                    <div className="faq-left-col w-full max-w-[480px] lg:w-1/2 relative mt-8 lg:mt-0">
                         <img
                             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800"
                             alt="Woman and child sharing food"
-                            className="w-full rounded-3xl object-cover shadow-lg aspect-4/5 object-center"
+                            className="faq-left-img w-full rounded-3xl object-cover shadow-lg aspect-4/5 object-center"
                         />
 
                         {/* Spinning Contact Us Badge */}
-                        <div className="absolute top-8 -right-4 md:-right-10 lg:-right-12 w-[130px] h-[130px] bg-[#dc4c3e] rounded-full flex items-center justify-center shadow-xl z-20 border-[6px] border-[#f8f9fa]">
+                        <div className="faq-badge-contact absolute top-8 -right-4 md:-right-10 lg:-right-12 w-[130px] h-[130px] bg-[#dc4c3e] rounded-full flex items-center justify-center shadow-xl z-20 border-[6px] border-[#f8f9fa]">
                             <div className="animate-[spin_12s_linear_infinite] w-full h-full absolute inset-0">
                                 <svg viewBox="0 0 100 100" className="w-full h-full text-white font-bold text-[11px] uppercase tracking-widest">
                                     <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
                                     <text>
-                                        <textPath href="#textPath" startOffset="0%" textLength="220">
+                                        <textPath href="/contact" startOffset="0%" textLength="220">
                                             Contact Us • Contact Us • Contact Us •
                                         </textPath>
                                     </text>
@@ -63,7 +130,7 @@ const Faq = () => {
                         </div>
 
                         {/* Dark Review Card */}
-                        <div className="absolute -bottom-10 right-4 md:-right-8 lg:-right-16 bg-[#232a39] rounded-2xl p-7 w-[280px] shadow-2xl z-20 border-[6px] border-[#f8f9fa]">
+                        <div className="faq-badge-review absolute -bottom-10 right-4 md:-right-8 lg:-right-16 bg-[#232a39] rounded-2xl p-7 w-[280px] shadow-2xl z-20 border-[6px] border-[#f8f9fa]">
                             <div className="flex gap-1.5 mb-5">
                                 {[1, 2, 3, 4, 5].map((_, i) => (
                                     <Star key={i} className="w-4 h-4 fill-white text-white" />
@@ -93,21 +160,21 @@ const Faq = () => {
                     </div>
 
                     {/* Right Column - FAQ Accordion */}
-                    <div className="w-full lg:w-1/2 pt-16 lg:pt-0">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 mb-6 shadow-sm">
+                    <div className="faq-right-col w-full lg:w-1/2 pt-16 lg:pt-0">
+                        <div className="faq-right-header inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 mb-6 shadow-sm">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
                             <span className="text-sm font-semibold text-gray-700">Frequently Asked Questions</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-[2.75rem] font-bold text-slate-900 mb-10 tracking-tight leading-[1.15]">
+                        <h2 className="faq-right-header text-4xl md:text-[2.75rem] font-bold text-slate-900 mb-10 tracking-tight leading-[1.15]">
                             Your questions answers with transparency & care
                         </h2>
 
-                        <div className="flex flex-col gap-4">
+                        <div className="faq-accordion-list flex flex-col gap-4">
                             {faqs.map((faq) => (
                                 <div
                                     key={faq.id}
-                                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
+                                    className="faq-item bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
                                 >
                                     <button
                                         onClick={() => setOpenIndex(openIndex === faq.id ? null : faq.id)}

@@ -1,12 +1,45 @@
 ;
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Dynamically import all images in the sponcer folder
 const sponsorModules = import.meta.glob('../assets/sponcer/*.{webp,jpg,jpeg,png}', { eager: true });
 const sponsorImages = Object.values(sponsorModules).map((mod) => mod.default);
 
 const Sponsors = () => {
+    const sectionRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.from('.sponsors-badge', {
+            opacity: 0,
+            y: -30,
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top 85%'
+            }
+        });
+
+        gsap.from('.sponsors-marquee-wrap', {
+            opacity: 0,
+            scale: 0.96,
+            duration: 1.1,
+            delay: 0.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top 85%'
+            }
+        });
+    }, { scope: sectionRef });
+
     return (
-        <section className="relative py-20 bg-[#141820] overflow-hidden">
+        <section ref={sectionRef} className="relative py-20 bg-[#141820] overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -19,12 +52,12 @@ const Sponsors = () => {
 
             <div className="relative z-10 w-full flex flex-col items-center">
                 {/* Title Badge */}
-                <div className="bg-white text-slate-900 font-bold px-10 py-3 rounded shadow-lg tracking-widest text-[0.95rem] mb-16 uppercase border border-gray-200">
+                <div className="sponsors-badge bg-white text-slate-900 font-bold px-10 py-3 rounded shadow-lg tracking-widest text-[0.95rem] mb-16 uppercase border border-gray-200">
                     Our Sponsors
                 </div>
 
                 {/* Scrolling Marquee Container */}
-                <div className="w-full overflow-hidden relative">
+                <div className="sponsors-marquee-wrap w-full overflow-hidden relative">
                     {/* Gradient Edges for smooth fade */}
                     <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-linear-to-r from-black/80 to-transparent z-20 pointer-events-none"></div>
                     <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-linear-to-l from-black/80 to-transparent z-20 pointer-events-none"></div>

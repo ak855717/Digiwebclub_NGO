@@ -1,28 +1,89 @@
 
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowUpRight, Aperture, Layers, PackagePlus, Settings, Star, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const OurService = () => {
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    // Header animation
+    gsap.from('.service-header-item', {
+      opacity: 0,
+      y: 40,
+      duration: 0.9,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.service-header-row',
+        start: 'top 85%',
+      }
+    });
+
+    // Services Grid item animations
+    gsap.from('.service-card', {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.service-grid-container',
+        start: 'top 85%',
+      }
+    });
+
+    // Trust Score Card animation
+    gsap.from('.trust-card', {
+      opacity: 0,
+      scale: 0.92,
+      y: 30,
+      duration: 1.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.trust-card',
+        start: 'top 85%',
+      }
+    });
+
+    // Bottom Footer Row animation
+    gsap.from('.service-footer-row', {
+      opacity: 0,
+      y: 30,
+      duration: 0.9,
+      scrollTrigger: {
+        trigger: '.service-footer-row',
+        start: 'top 90%',
+      }
+    });
+  }, { scope: sectionRef });
+
   return (
-    <section className="py-16 md:py-15 bg-white">
+    <section ref={sectionRef} className="py-16 md:py-15 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* Top Header Row */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+        <div className="service-header-row flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-slate-800 mb-6">
+            <div className="service-header-item inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm font-semibold text-slate-800 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#DF4A43]"></span>
               Our Services
             </div>
-            <h2 className="text-4xl md:text-[44px] font-bold text-slate-900 leading-[1.2]">
+            <h2 className="service-header-item text-4xl md:text-[44px] font-bold text-slate-900 leading-[1.2]">
               Delivering support where it's needed most
             </h2>
           </div>
 
           <div className="max-w-md">
-            <p className="text-gray-500 mb-6 text-[15px] leading-relaxed">
+            <p className="service-header-item text-gray-500 mb-6 text-[15px] leading-relaxed">
               We focus on reaching vulnerable communities with timely assistance and sustainable programs, ensuring that everyone has a chance to thrive.
             </p>
-            <button className="flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold">
+            <button className="service-header-item flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold">
               View All Initiatives
               <span className="bg-white text-gray-900 p-2 rounded-lg">
                 <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
@@ -35,11 +96,11 @@ const OurService = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
           {/* Left side: Services Grid (8 columns) */}
-          <div className="lg:col-span-7 xl:col-span-8">
+          <div className="service-grid-container lg:col-span-7 xl:col-span-8">
             <div className="grid grid-cols-1 md:grid-cols-2">
 
               {/* Service Item 1 */}
-              <div className="p-4 md:p-8 md:pl-0 border-b border-gray-300/50 md:border-r">
+              <div className="service-card p-4 md:p-8 md:pl-0 border-b border-gray-300/50 md:border-r">
                 <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
                   <Aperture className="w-6 h-6" />
                 </div>
@@ -53,7 +114,7 @@ const OurService = () => {
               </div>
 
               {/* Service Item 2 */}
-              <div className="p-4 md:p-8 border-b border-gray-300/50">
+              <div className="service-card p-4 md:p-8 border-b border-gray-300/50">
                 <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
                   <Layers className="w-6 h-6" />
                 </div>
@@ -67,7 +128,7 @@ const OurService = () => {
               </div>
 
               {/* Service Item 3 */}
-              <div className="p-4 md:p-8 md:pl-0 border-b md:border-b-0 border-gray-300/50 md:border-r">
+              <div className="service-card p-4 md:p-8 md:pl-0 border-b md:border-b-0 border-gray-300/50 md:border-r">
                 <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
                   <PackagePlus className="w-6 h-6" />
                 </div>
@@ -81,7 +142,7 @@ const OurService = () => {
               </div>
 
               {/* Service Item 4 */}
-              <div className="p-4 md:p-8">
+              <div className="service-card p-4 md:p-8">
                 <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
                   <Settings className="w-6 h-6" />
                 </div>
@@ -99,7 +160,7 @@ const OurService = () => {
 
           {/* Right side: Trust Score Card (4 columns) */}
           <div className="lg:col-span-5 xl:col-span-4 h-full">
-            <div className="bg-[#1e2433] rounded-3xl p-10 h-full min-h-[420px] flex flex-col items-center justify-center text-center relative overflow-hidden shadow-xl">
+            <div className="trust-card bg-[#1e2433] rounded-3xl p-10 h-full min-h-[420px] flex flex-col items-center justify-center text-center relative overflow-hidden shadow-xl">
 
               {/* Profiles */}
               <div className="flex -space-x-4 mb-8 relative z-10">
@@ -125,12 +186,12 @@ const OurService = () => {
               </h3>
 
               {/* Button */}
-              <button className="flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold relative z-10">
+              <Link to="/contact" className="flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold relative z-10">
                 Contact Now
                 <span className="bg-white text-gray-900 p-2 rounded-lg">
                   <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
                 </span>
-              </button>
+              </Link>
 
               {/* Background graphic */}
               <div
@@ -146,7 +207,7 @@ const OurService = () => {
         </div>
 
         {/* Bottom Footer Row */}
-        <div className="mt-20 text-center flex flex-wrap items-center justify-center gap-3">
+        <div className="service-footer-row mt-20 text-center flex flex-wrap items-center justify-center gap-3">
           <div className="flex -space-x-2 relative z-10">
             <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100&auto=format&fit=crop" alt="Agent" />
             <div className="w-10 h-10 rounded-full bg-[#DF4A43] flex items-center justify-center border-2 border-white text-white shadow-sm z-20">
@@ -154,7 +215,7 @@ const OurService = () => {
             </div>
           </div>
           <p className="text-gray-500 font-medium text-[15px]">
-            Have questions about our initiatives? <a href="#" className="text-[#DF4A43] font-bold underline decoration-2 underline-offset-4 hover:text-[#c23d3d] transition-colors">Contact Us</a>
+            Have questions about our initiatives? <Link to="/contact" className="text-[#DF4A43] font-bold underline decoration-2 underline-offset-4 hover:text-[#c23d3d] transition-colors">Contact Us</Link>
           </p>
         </div>
 

@@ -1,4 +1,8 @@
 
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import img1 from "../assets/about/Service-1-removebg-preview.png"
 import img2 from "../assets/about/Service-2-removebg-preview.png"
 import img3 from "../assets/about/Service-3-removebg-preview.png"
@@ -7,8 +11,10 @@ import img5 from "../assets/about/Service-5-removebg-preview.png"
 import img6 from "../assets/about/Service-6-removebg-preview.png"
 import img7 from "../assets/about/Service-12-removebg-preview.png"
 
+gsap.registerPlugin(ScrollTrigger);
 
 const objective = () => {
+    const sectionRef = useRef(null);
 
     const services = [
         {
@@ -52,19 +58,47 @@ const objective = () => {
             desc: "To receive financial and non-financial assistance from Govt. and Non-Govt. organizations, international agencies, bank and any other legal entity or individual.",
         },
     ];
+
+    useGSAP(() => {
+        gsap.from('.objective-header-anim', {
+            opacity: 0,
+            y: 35,
+            duration: 0.9,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.objective-header-wrap',
+                start: 'top 85%'
+            }
+        });
+
+        gsap.from('.svc-card', {
+            opacity: 0,
+            y: 45,
+            scale: 0.92,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.objective-grid',
+                start: 'top 85%'
+            }
+        });
+    }, { scope: sectionRef });
+
     return (
         <>
-            <div className="bg-[#fdf6ef] py-8 md:py-12">
-                <div className="max-w-7xl mx-auto mb-18 px-4 sm:px-6 lg:px-8 text-center">
+            <div ref={sectionRef} className="bg-[#fdf6ef] py-8 md:py-12 overflow-hidden">
+                <div className="objective-header-wrap max-w-7xl mx-auto mb-18 px-4 sm:px-6 lg:px-8 text-center">
                     {/* Badge */}
-                    <div>
+                    <div className="objective-header-anim">
                         <span className="inline-block bg-white rounded-md px-3.5 py-1.5 text-xs sm:text-4xl font-bold tracking-wider text-[#1A202C] uppercase shadow-2xs">
                             OUR OBJECTIVE
                         </span>
                     </div>
 
                     {/* Title */}
-                    <p className="mt-4 sm:mt-5 text-lg sm:text-xl md:text-lg lg:text-xl text-gray-600">
+                    <p className="objective-header-anim mt-4 sm:mt-5 text-lg sm:text-xl md:text-lg lg:text-xl text-gray-600">
                         To accept donations, grants, and other offerings in the shape of movable and /or immovable properties for the <br />attainment of the aims and objects of the Organisation.
                     </p>
                 </div>
@@ -100,7 +134,7 @@ const objective = () => {
         }
       `}</style>
                     {/* Cards Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-5xl mx-auto">
+                    <div className="objective-grid grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-5xl mx-auto">
                         {services.map((service) => (
                             <div
                                 key={service.label}

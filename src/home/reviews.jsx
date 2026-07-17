@@ -1,9 +1,43 @@
 ;
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Star } from 'lucide-react';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Reviews = () => {
+    const sectionRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.from('.reviews-left-item', {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            stagger: 0.18,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.reviews-left-col',
+                start: 'top 85%'
+            }
+        });
+
+        gsap.from('.reviews-right-card', {
+            opacity: 0,
+            scale: 0.94,
+            x: 50,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.reviews-right-card',
+                start: 'top 85%'
+            }
+        });
+    }, { scope: sectionRef });
+
     return (
-        <section className="relative w-full min-h-[600px] flex items-center font-sans overflow-hidden">
+        <section ref={sectionRef} className="relative w-full min-h-[600px] flex items-center font-sans overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -21,11 +55,11 @@ const Reviews = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-end gap-16">
 
                     {/* Left Content */}
-                    <div className="w-full lg:w-1/2 max-w-xl pb-10">
+                    <div className="reviews-left-col w-full lg:w-1/2 max-w-xl pb-10">
                         {/* Decorative Red Dot */}
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e] mb-10 ml-32 shadow-sm"></div>
+                        <div className="reviews-left-item w-1.5 h-1.5 rounded-full bg-[#dc4c3e] mb-10 ml-32 shadow-sm"></div>
 
-                        <div className="inline-flex items-center gap-3 px-2 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 shadow-sm">
+                        <div className="reviews-left-item inline-flex items-center gap-3 px-2 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 shadow-sm">
                             <div className="flex -space-x-2 pl-1">
                                 <img className="w-7 h-7 rounded-full border-2 border-transparent object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" />
                                 <img className="w-7 h-7 rounded-full border-2 border-transparent object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Avatar" />
@@ -34,14 +68,14 @@ const Reviews = () => {
                             <span className="text-sm font-semibold text-white pr-4">Testimonials</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
+                        <h2 className="reviews-left-item text-4xl md:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
                             Building trust through real experiences
                         </h2>
                     </div>
 
                     {/* Right Content - Review Card */}
                     <div className="w-full lg:w-[45%]">
-                        <div className="bg-white rounded-3xl p-10 md:p-12 shadow-2xl relative">
+                        <div className="reviews-right-card bg-white rounded-3xl p-10 md:p-12 shadow-2xl relative">
                             <div className="flex justify-between items-start mb-10">
                                 <div className="flex gap-1.5">
                                     {[1, 2, 3, 4, 5].map((_, i) => (

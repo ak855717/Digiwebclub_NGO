@@ -1,12 +1,44 @@
-import  { useState } from 'react';
+import { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShieldCheck, CheckCircle2, Lock } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Donation = () => {
   const [selectedAmount, setSelectedAmount] = useState(500);
   const amounts = [500, 1000, 2000, 5000, 10000, 20000];
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.donation-left-item', {
+      opacity: 0,
+      y: 40,
+      duration: 0.9,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.donation-left-wrap',
+        start: 'top 85%'
+      }
+    });
+
+    gsap.from('.donation-form-card', {
+      opacity: 0,
+      scale: 0.92,
+      x: 50,
+      duration: 1.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.donation-form-card',
+        start: 'top 85%'
+      }
+    });
+  }, { scope: sectionRef });
 
   return (
-    <section className="relative py-24 bg-[#232a39] font-sans overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 bg-[#232a39] font-sans overflow-hidden">
       {/* Subtle chevron background pattern */}
       <div 
         className="absolute inset-0 opacity-5" 
@@ -22,21 +54,21 @@ const Donation = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
+          <div className="donation-left-wrap">
+            <div className="donation-left-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
               <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
               <span className="text-sm font-semibold text-white/90">Support EKDKN</span>
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
+            <h2 className="donation-left-item text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
               Your kindness can change<br />a life today
             </h2>
             
-            <p className="text-gray-300 text-[1.05rem] mb-12 max-w-lg leading-relaxed">
+            <p className="donation-left-item text-gray-300 text-[1.05rem] mb-12 max-w-lg leading-relaxed">
               Every contribution, no matter the size, helps us provide education, food, healthcare, and environmental support. Join us in creating meaningful and lasting change.
             </p>
 
-            <div className="flex gap-5 mb-10">
+            <div className="donation-left-item flex gap-5 mb-10">
               <div className="shrink-0 w-14 h-14 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white shadow-lg">
                 <ShieldCheck className="w-7 h-7" />
               </div>
@@ -48,7 +80,7 @@ const Donation = () => {
               </div>
             </div>
 
-            <div className="border-t border-white/10 pt-8">
+            <div className="donation-left-item border-t border-white/10 pt-8">
               <div className="flex flex-col sm:flex-row gap-8">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-[#dc4c3e]" fill="#dc4c3e" color="white" />
@@ -63,7 +95,7 @@ const Donation = () => {
           </div>
 
           {/* Right Column - Donation Form */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-2xl ml-auto w-full max-w-[540px]">
+          <div className="donation-form-card bg-white rounded-xl overflow-hidden shadow-2xl ml-auto w-full max-w-[540px]">
             <div className="px-8 py-6 text-center border-b-[5px] border-slate-900">
               <h3 className="text-[1.15rem] font-bold text-slate-900">How much would you like to donate today?</h3>
             </div>

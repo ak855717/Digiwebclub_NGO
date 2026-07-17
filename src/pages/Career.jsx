@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Hero from '../components/Hero';
 import galleryImg1 from '../assets/Gallery/gallery (1).webp';
 import {
@@ -8,11 +7,9 @@ import {
     Clock,
     Award,
     CheckCircle2,
-    Send,
     Mail,
     Users,
     Sparkles,
-    ArrowUpRight,
     Calendar,
     MapPin,
     Share2,
@@ -97,7 +94,7 @@ const Career = () => {
                     {/* Card 2: Volunteer */}
                     <div className="relative overflow-hidden rounded-3xl bg-[#2D2E62] text-white p-8 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(45,46,98,0.25)] flex flex-col justify-between group hover:shadow-[0_25px_60px_rgba(45,46,98,0.35)] transition-all duration-300">
                         {/* Decorative Background Glow */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-orange-500/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
                         <div>
                             <div className="flex items-center justify-between mb-6">
@@ -155,7 +152,7 @@ const Career = () => {
                             alt="Campus Catalyst and Volunteers session"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#2D2E62] via-transparent to-transparent opacity-60"></div>
+                        <div className="absolute inset-0 bg-linear-to-t lg:bg-linear-to-r from-[#2D2E62] via-transparent to-transparent opacity-60"></div>
                         
                         <div className="absolute bottom-6 left-6 right-6 z-10">
                             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-black/60 backdrop-blur-md text-white text-xs font-semibold">
@@ -295,7 +292,7 @@ const Career = () => {
                         </div>
 
                         {/* Right Side: Visual Banner Graphic */}
-                        <div className="lg:col-span-5 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 relative flex flex-col items-center justify-center p-8 sm:p-12 overflow-hidden min-h-[340px]">
+                        <div className="lg:col-span-5 bg-linear-to-br from-slate-200 via-slate-300 to-slate-400 relative flex flex-col items-center justify-center p-8 sm:p-12 overflow-hidden min-h-[340px]">
                             {/* Decorative architectural/chair style graphic representation */}
                             <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 bg-[#1C3A6E] flex flex-col items-center justify-between py-8">
                                 <div className="w-12 h-12 rounded-full bg-yellow-400/20 blur-xl"></div>
