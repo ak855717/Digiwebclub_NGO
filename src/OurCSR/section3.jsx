@@ -84,7 +84,7 @@ const Section3 = () => {
             </div>
 
             <div className="flex items-center justify-center gap-3 bg-white rounded-xl py-3 px-4 shadow-2xs border border-gray-100">
-              <Award className="w-5 h-5 text-[#D33D33] shrink-0" />
+              <Award className="w-5 h-5 text-[#FFC107] shrink-0" />
               <div className="text-left">
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Academic Merit</p>
                 <p className="text-sm font-bold text-gray-800">CBSE Board Achievers</p>

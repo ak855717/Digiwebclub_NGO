@@ -120,7 +120,7 @@ const Hero = () => {
               {/* Badge */}
               <div className="hero-badge inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md rounded-full pr-5 py-1.5 border border-white/10 shadow-lg cursor-default">
                 <div className="flex -space-x-2 pl-1">
-                  <div className="w-8 h-8 rounded-full border-2 border-slate-900 bg-[#D33D33] flex items-center justify-center text-xs text-white">★</div>
+                  <div className="w-8 h-8 rounded-full border-2 border-slate-900 bg-[#FFC107] flex items-center justify-center text-xs text-white">★</div>
                 </div>
                 <span className="text-sm font-medium text-white tracking-wide">EKDKN Initiative</span>
               </div>

@@ -116,7 +116,7 @@ const WhyChoose = () => {
           <div className="why-content-wrap flex flex-col">
 
             <div className="mb-10">
-              <div className="why-text-anim inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] rounded-full text-sm font-semibold text-white mb-6 shadow-sm border border-gray-100">
+              <div className="why-text-anim inline-flex items-center gap-2 px-4 py-2 bg-[#FFC107] rounded-full text-sm font-semibold text-white mb-6 shadow-sm border border-gray-100">
                 <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
                 Our Vision & Mission
               </div>
@@ -135,19 +135,19 @@ const WhyChoose = () => {
 
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-[#DF4A43] rounded-full flex items-center justify-center shrink-0">
+                    <div className="w-5 h-5 bg-[#FFC107] rounded-full flex items-center justify-center shrink-0">
                       <Check className="w-3 h-3 text-white" strokeWidth={4} />
                     </div>
                     <span className="text-gray-500 text-[15px]">Provide Quality Education (DAKSH)</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-[#DF4A43] rounded-full flex items-center justify-center shrink-0">
+                    <div className="w-5 h-5 bg-[#FFC107] rounded-full flex items-center justify-center shrink-0">
                       <Check className="w-3 h-3 text-white" strokeWidth={4} />
                     </div>
                     <span className="text-gray-500 text-[15px]">Promote Sustainable Environment (DRI)</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-[#DF4A43] rounded-full flex items-center justify-center shrink-0">
+                    <div className="w-5 h-5 bg-[#FFC107] rounded-full flex items-center justify-center shrink-0">
                       <Check className="w-3 h-3 text-white" strokeWidth={4} />
                     </div>
                     <span className="text-gray-500 text-[15px]">Support Specially-Abled Children</span>
@@ -166,7 +166,7 @@ const WhyChoose = () => {
 
             {/* Action area */}
             <div className="why-text-anim mt-2 border-t border-gray-200/60 pt-8">
-              <Link to='/about#about_approach' className="flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold w-fit">
+              <Link to='/about#about_approach' className="flex items-center gap-4 bg-[#FFC107] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#d4a000] transition-colors font-semibold w-fit">
                 Join Our Mission
                 <span className="bg-white text-gray-900 p-2 rounded-lg">
                   <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />

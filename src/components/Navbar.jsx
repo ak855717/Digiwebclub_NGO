@@ -22,7 +22,7 @@ const Navbar = () => {
     const isAwardsActive = awardsDropdown.some(item => pathname === item.href);
 
     const getLinkClass = (path) =>
-        `cursor-pointer transition-colors ${isActive(path) ? 'text-[#D33D33]' : 'hover:text-[#D33D33]'}`;
+        `cursor-pointer transition-colors ${isActive(path) ? 'text-[#FFC107]' : 'hover:text-[#FFC107]'}`;
 
     return (
         <>
@@ -54,11 +54,11 @@ const Navbar = () => {
                             onMouseLeave={() => setIsAwardsOpen(false)}
                         >
                             <div
-                                className={`flex items-center gap-1 transition-colors py-1 ${isAwardsActive || isAwardsOpen ? 'text-[#D33D33]' : 'hover:text-[#D33D33]'}`}
+                                className={`flex items-center gap-1 transition-colors py-1 ${isAwardsActive || isAwardsOpen ? 'text-[#FFC107]' : 'hover:text-[#FFC107]'}`}
                                 onClick={() => setIsAwardsOpen(!isAwardsOpen)}
                             >
                                 <span>Awards & Conference</span>
-                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(isAwardsOpen || isAwardsActive) ? 'text-[#D33D33]' : ''} ${isAwardsOpen ? 'rotate-180' : ''}`} />
+                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(isAwardsOpen || isAwardsActive) ? 'text-[#FFC107]' : ''} ${isAwardsOpen ? 'rotate-180' : ''}`} />
                             </div>
 
                             {/* Dropdown Menu */}
@@ -71,8 +71,8 @@ const Navbar = () => {
                                             to={item.href}
                                             onClick={() => setIsAwardsOpen(false)}
                                             className={`block px-5 py-3.5 text-[15px] transition-colors ${isActive(item.href)
-                                                    ? 'text-[#D33D33] font-medium bg-gray-50'
-                                                    : 'font-normal text-gray-700 hover:bg-gray-50 hover:text-[#D33D33]'
+                                                    ? 'text-[#FFC107] font-medium bg-gray-50'
+                                                    : 'font-normal text-gray-700 hover:bg-gray-50 hover:text-[#FFC107]'
                                                 } ${index !== awardsDropdown.length - 1 ? 'border-b border-gray-200' : ''}`}
                                         >
                                             {item.name}
@@ -101,9 +101,9 @@ const Navbar = () => {
 
                     {/* Action Button */}
                     <div className="hidden md:flex">
-                        <button className="bg-[#D33D33] text-white rounded-full pl-6 pr-2 py-2 flex items-center gap-4 font-medium hover:bg-[#b9352c] transition-colors">
+                        <button className="bg-[#FFC107] text-white rounded-full pl-6 pr-2 py-2 flex items-center gap-4 font-medium hover:bg-[#b9352c] transition-colors">
                             Donation
-                            <div className="bg-white rounded-full p-2 text-[#D33D33] flex items-center justify-center">
+                            <div className="bg-white rounded-full p-2 text-[#FFC107] flex items-center justify-center">
                                 <ArrowUpRight className="w-[18px] h-[18px]" strokeWidth={2.5} />
                             </div>
                         </button>

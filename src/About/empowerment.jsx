@@ -131,10 +131,10 @@ const Empowerment = () => {
                                 key={index}
                                 className="empowerment-sector-card flex flex-col items-center gap-3.5 group cursor-pointer"
                             >
-                                <div className="w-20 h-20 sm:w-20 sm:h-20 rounded-full text-white flex items-center justify-center shrink-0 shadow-lg bg-[#D33D33] group-hover:scale-105 group-hover:bg-[#b9352c] transition-all duration-300">
+                                <div className="w-20 h-20 sm:w-20 sm:h-20 rounded-full text-white flex items-center justify-center shrink-0 shadow-lg bg-[#FFC107] group-hover:scale-105 group-hover:bg-[#b9352c] transition-all duration-300">
                                     {sector.icon}
                                 </div>
-                                <span className="font-semibold text-base sm:text-xl text-white group-hover:text-[#D33D33] transition-colors duration-300">
+                                <span className="font-semibold text-base sm:text-xl text-white group-hover:text-[#FFC107] transition-colors duration-300">
                                     {sector.name}
                                 </span>
                             </div>

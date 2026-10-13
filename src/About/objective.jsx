@@ -112,7 +112,7 @@ const objective = () => {
           position: absolute;
           width: 0;
           height: 0;
-          background: #D33D33;
+          background: #FFC107;
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: 1;
         }
@@ -138,7 +138,7 @@ const objective = () => {
                         {services.map((service) => (
                             <div
                                 key={service.label}
-                                className="svc-card group relative overflow-hidden rounded-lg bg-[#313741] cursor-pointer flex justify-center items-center border-r-3 border-b-3 border-[#D33D33]"
+                                className="svc-card group relative overflow-hidden rounded-lg bg-[#313741] cursor-pointer flex justify-center items-center border-r-3 border-b-3 border-[#FFC107]"
                                 style={{ aspectRatio: "4/4", maxHeight: "290px" }}
                             >
                                 {/* Default view */}

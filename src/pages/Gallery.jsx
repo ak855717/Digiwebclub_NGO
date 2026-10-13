@@ -211,12 +211,12 @@ const Gallery = () => {
                 <div ref={headerCardRef} className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.07)] border border-gray-100/80 p-6 md:p-8">
                     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                         <div className="flex items-center gap-5">
-                            <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#D33D33] to-[#b9352c] flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#D33D33]/25">
+                            <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#FFC107] to-[#b9352c] flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#FFC107]/25">
                                 <ImageIcon className="w-8 h-8" />
                             </div>
                             <div>
                                 <div className="flex items-center gap-2">
-                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-[#D33D33] uppercase tracking-wider">
+                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-[#FFC107] uppercase tracking-wider">
                                         <Sparkles className="w-3.5 h-3.5" /> EKDKN Visual Archives
                                     </span>
                                 </div>
@@ -232,7 +232,7 @@ const Gallery = () => {
                         {/* Impact Stats Pillars */}
                         <div className="flex justify-center items-center gap-6 bg-gray-50/80 p-4 sm:px-6 sm:py-4 rounded-2xl border border-gray-100 w-full lg:w-auto">
                             <div className="text-center">
-                                <div ref={momentsStatRef} className="text-xl sm:text-2xl font-black text-[#D33D33]">0+</div>
+                                <div ref={momentsStatRef} className="text-xl sm:text-2xl font-black text-[#FFC107]">0+</div>
                                 <div className="text-[11px] sm:text-xs font-semibold text-gray-500">Moments</div>
                             </div>
                             <div className="w-px h-10 bg-gray-200 mx-auto" />
@@ -258,7 +258,7 @@ const Gallery = () => {
                         <button
                             onClick={() => setGridCols(2)}
                             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                gridCols === 2 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
+                                gridCols === 2 ? 'bg-[#FFC107] text-white' : 'text-gray-500 hover:text-gray-800'
                             }`}
                         >
                             2 Col
@@ -266,7 +266,7 @@ const Gallery = () => {
                         <button
                             onClick={() => setGridCols(3)}
                             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                gridCols === 3 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
+                                gridCols === 3 ? 'bg-[#FFC107] text-white' : 'text-gray-500 hover:text-gray-800'
                             }`}
                         >
                             3 Col
@@ -274,7 +274,7 @@ const Gallery = () => {
                         <button
                             onClick={() => setGridCols(4)}
                             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                                gridCols === 4 ? 'bg-[#D33D33] text-white' : 'text-gray-500 hover:text-gray-800'
+                                gridCols === 4 ? 'bg-[#FFC107] text-white' : 'text-gray-500 hover:text-gray-800'
                             }`}
                         >
                             4 Col
@@ -316,9 +316,9 @@ const Gallery = () => {
             {/* Call to Action Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
                 <div className="bg-linear-to-r from-[#1A2130] via-[#242D40] to-[#1A2130] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
-                    <div className="absolute -right-10 -top-10 w-64 h-64 bg-[#D33D33]/15 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute -right-10 -top-10 w-64 h-64 bg-[#FFC107]/15 rounded-full blur-3xl pointer-events-none" />
                     <div className="max-w-2xl relative z-10">
-                        <span className="px-3.5 py-1.5 bg-[#D33D33] text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                        <span className="px-3.5 py-1.5 bg-[#FFC107] text-white text-xs font-bold rounded-full uppercase tracking-wider">
                             Join Our Mission
                         </span>
                         <h3 className="text-2xl md:text-3xl font-extrabold mt-4">
@@ -331,7 +331,7 @@ const Gallery = () => {
                     <div className="flex flex-wrap items-center gap-4 shrink-0 relative z-10">
                         <a
                             href="/contact"
-                            className="px-7 py-3.5 bg-[#D33D33] hover:bg-[#b9352c] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#D33D33]/30 text-sm"
+                            className="px-7 py-3.5 bg-[#FFC107] hover:bg-[#b9352c] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#FFC107]/30 text-sm"
                         >
                             Partner With Us
                         </a>
@@ -377,7 +377,7 @@ const Gallery = () => {
                                     }}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-all ${
                                         isSlideshowPlaying
-                                            ? 'bg-[#D33D33] text-white shadow-lg shadow-[#D33D33]/40 animate-pulse'
+                                            ? 'bg-[#FFC107] text-white shadow-lg shadow-[#FFC107]/40 animate-pulse'
                                             : 'bg-white/10 hover:bg-white/20 text-white'
                                     }`}
                                     title="Autoplay Slideshow (Spacebar)"
@@ -422,7 +422,7 @@ const Gallery = () => {
                                             (prev) => (prev - 1 + galleryItems.length) % galleryItems.length
                                         )
                                     }
-                                    className="absolute left-4 md:left-8 p-3.5 rounded-full bg-black/50 hover:bg-[#D33D33] text-white border border-white/10 transition-all duration-200 z-20 shadow-xl"
+                                    className="absolute left-4 md:left-8 p-3.5 rounded-full bg-black/50 hover:bg-[#FFC107] text-white border border-white/10 transition-all duration-200 z-20 shadow-xl"
                                     title="Previous Photo (Left Arrow)"
                                 >
                                     <ChevronLeft className="w-6 h-6" />
@@ -445,7 +445,7 @@ const Gallery = () => {
                                     onClick={() =>
                                         setLightboxIndex((prev) => (prev + 1) % galleryItems.length)
                                     }
-                                    className="absolute right-4 md:right-8 p-3.5 rounded-full bg-black/50 hover:bg-[#D33D33] text-white border border-white/10 transition-all duration-200 z-20 shadow-xl"
+                                    className="absolute right-4 md:right-8 p-3.5 rounded-full bg-black/50 hover:bg-[#FFC107] text-white border border-white/10 transition-all duration-200 z-20 shadow-xl"
                                     title="Next Photo (Right Arrow)"
                                 >
                                     <ChevronRight className="w-6 h-6" />
@@ -477,7 +477,7 @@ const Gallery = () => {
                                             onClick={() => setLightboxIndex(idx)}
                                             className={`relative w-14 h-11 md:w-16 md:h-12 rounded-lg overflow-hidden shrink-0 transition-all duration-300 ${
                                                 isCurrent
-                                                    ? 'ring-2 ring-[#D33D33] scale-110 opacity-100'
+                                                    ? 'ring-2 ring-[#FFC107] scale-110 opacity-100'
                                                     : 'opacity-40 hover:opacity-80 scale-95'
                                             }`}
                                         >
@@ -518,11 +518,11 @@ const GalleryCard = ({ item, onClick }) => {
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
                     <div className="flex items-center justify-between text-white">
                         <span className="flex items-center gap-1.5 text-xs font-semibold text-gray-200">
-                            <Eye className="w-4 h-4 text-[#D33D33]" />
+                            <Eye className="w-4 h-4 text-[#FFC107]" />
                             Click to Expand
                         </span>
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-[#D33D33] flex items-center justify-center text-white shadow-md">
+                            <div className="w-8 h-8 rounded-full bg-[#FFC107] flex items-center justify-center text-white shadow-md">
                                 <Maximize2 className="w-3.5 h-3.5" />
                             </div>
                         </div>
@@ -537,7 +537,7 @@ const GalleryCard = ({ item, onClick }) => {
                     <span className="text-gray-300">•</span>
                     <span className="text-gray-400 font-medium">{item.date}</span>
                 </div>
-                <span className="text-[#D33D33] font-semibold group-hover:underline flex items-center gap-1">
+                <span className="text-[#FFC107] font-semibold group-hover:underline flex items-center gap-1">
                     View <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
             </div>

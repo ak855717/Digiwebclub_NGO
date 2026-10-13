@@ -62,12 +62,12 @@ const Media = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
                 <div className="bg-white rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-gray-100 p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-6">
                     <div className="flex items-center gap-5">
-                        <div className="w-14 h-14 rounded-2xl bg-[#D33D33]/10 flex items-center justify-center text-[#D33D33] shrink-0">
+                        <div className="w-14 h-14 rounded-2xl bg-[#FFC107]/10 flex items-center justify-center text-[#FFC107] shrink-0">
                             <Newspaper className="w-7 h-7" />
                         </div>
                         <div>
                             <div className="flex items-center gap-2">
-                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-[#D33D33] uppercase tracking-wider">
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-[#FFC107] uppercase tracking-wider">
                                     <Sparkles className="w-3.5 h-3.5" /> Press & Publications
                                 </span>
                             </div>
@@ -83,7 +83,7 @@ const Media = () => {
                     {/* Stats Pill */}
                     <div className="flex items-center gap-6 bg-gray-50 px-6 py-4 rounded-2xl border border-gray-100 shrink-0">
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-[#D33D33]">{mediaItems.length}+</div>
+                            <div className="text-2xl font-bold text-[#FFC107]">{mediaItems.length}+</div>
                             <div className="text-xs font-medium text-gray-500">Press Clippings</div>
                         </div>
                         <div className="w-px h-10 bg-gray-200" />
@@ -170,10 +170,10 @@ const Media = () => {
                                 <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                                     <div className="w-full flex items-center justify-between text-white">
                                         <span className="flex items-center gap-2 text-xs font-medium">
-                                            <Eye className="w-4 h-4 text-[#D33D33]" />
+                                            <Eye className="w-4 h-4 text-[#FFC107]" />
                                             Click to View Full Size
                                         </span>
-                                        <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-[#D33D33] transition-colors">
+                                        <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-[#FFC107] transition-colors">
                                             <Maximize2 className="w-4 h-4 text-white" />
                                         </div>
                                     </div>
@@ -183,7 +183,7 @@ const Media = () => {
                             {/* Card Footer / Details */}
                             <div className="p-4 flex items-center justify-between text-xs text-gray-500 border-t border-gray-100">
                                 <span className="flex items-center gap-1.5 font-medium text-gray-600">
-                                    <Calendar className="w-3.5 h-3.5 text-[#D33D33]" />
+                                    <Calendar className="w-3.5 h-3.5 text-[#FFC107]" />
                                     {item.date}
                                 </span>
                                 <span className="font-medium text-gray-400">Press Clippings Gallery</span>
@@ -197,7 +197,7 @@ const Media = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
                 <div className="bg-linear-to-r from-[#1B2230] to-[#252E42] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
                     <div className="max-w-2xl">
-                        <span className="px-3 py-1 bg-[#D33D33] text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                        <span className="px-3 py-1 bg-[#FFC107] text-white text-xs font-bold rounded-full uppercase tracking-wider">
                             Media Inquiries
                         </span>
                         <h3 className="text-2xl md:text-3xl font-bold mt-4">
@@ -210,7 +210,7 @@ const Media = () => {
                     <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
                         <a
                             href="/contact"
-                            className="px-7 py-3.5 bg-[#D33D33] hover:bg-[#b9352c] text-white font-semibold rounded-full transition-colors shadow-lg shadow-[#D33D33]/30 text-sm"
+                            className="px-7 py-3.5 bg-[#FFC107] hover:bg-[#b9352c] text-white font-semibold rounded-full transition-colors shadow-lg shadow-[#FFC107]/30 text-sm"
                         >
                             Contact Media Desk
                         </a>

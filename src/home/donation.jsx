@@ -48,7 +48,7 @@ const Donation = () => {
         }}
       />
       {/* Decorative Red Dot */}
-      <div className="absolute top-16 left-16 w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
+      <div className="absolute top-16 left-16 w-1.5 h-1.5 rounded-full bg-[#FFC107]"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -56,7 +56,7 @@ const Donation = () => {
           {/* Left Column */}
           <div className="donation-left-wrap">
             <div className="donation-left-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#FFC107]"></div>
               <span className="text-sm font-semibold text-white/90">Support EKDKN</span>
             </div>
             
@@ -69,7 +69,7 @@ const Donation = () => {
             </p>
 
             <div className="donation-left-item flex gap-5 mb-10">
-              <div className="shrink-0 w-14 h-14 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white shadow-lg">
+              <div className="shrink-0 w-14 h-14 rounded-full bg-[#FFC107] flex items-center justify-center text-white shadow-lg">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <div>
@@ -83,11 +83,11 @@ const Donation = () => {
             <div className="donation-left-item border-t border-white/10 pt-8">
               <div className="flex flex-col sm:flex-row gap-8">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#dc4c3e]" fill="#dc4c3e" color="white" />
+                  <CheckCircle2 className="w-5 h-5 text-[#FFC107]" fill="#FFC107" color="white" />
                   <span className="text-white/90 text-[0.9rem] font-medium">Receive payment confirmation email</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#dc4c3e]" fill="#dc4c3e" color="white" />
+                  <CheckCircle2 className="w-5 h-5 text-[#FFC107]" fill="#FFC107" color="white" />
                   <span className="text-white/90 text-[0.9rem] font-medium">Our platform uses advanced security</span>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const Donation = () => {
 
               <div className="flex justify-between items-center mb-4">
                 <label className="text-slate-900 font-bold text-[0.95rem]">
-                  Donation Amount <span className="text-[#dc4c3e]">*</span>
+                  Donation Amount <span className="text-[#FFC107]">*</span>
                 </label>
                 <div className="bg-gray-200 text-slate-700 px-3 py-1 rounded text-xs font-bold flex items-center gap-1">
                   INR <span className="text-slate-400">|</span> ₹
@@ -121,7 +121,7 @@ const Donation = () => {
                     onClick={() => setSelectedAmount(amount)}
                     className={`py-3.5 rounded-lg text-center font-bold text-[0.95rem] transition-colors border ${
                       selectedAmount === amount 
-                        ? 'bg-[#dc4c3e] text-white border-[#dc4c3e]' 
+                        ? 'bg-[#FFC107] text-white border-[#FFC107]' 
                         : 'bg-gray-50 text-slate-800 border-transparent hover:border-gray-200 hover:bg-gray-100'
                     }`}
                   >
@@ -134,11 +134,11 @@ const Donation = () => {
                 <input 
                   type="text" 
                   placeholder="Enter custom amount (₹)" 
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3.5 text-center text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-[#dc4c3e]/20 focus:border-[#dc4c3e] transition-all placeholder:text-gray-400"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3.5 text-center text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-[#FFC107]/20 focus:border-[#FFC107] transition-all placeholder:text-gray-400"
                 />
               </div>
 
-              <button className="w-full bg-[#dc4c3e] hover:bg-[#c94134] text-white font-bold py-4 rounded-lg transition-colors mb-5">
+              <button className="w-full bg-[#FFC107] hover:bg-[#d4a000] text-white font-bold py-4 rounded-lg transition-colors mb-5">
                 Donate Now
               </button>
 

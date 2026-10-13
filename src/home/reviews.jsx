@@ -57,7 +57,7 @@ const Reviews = () => {
                     {/* Left Content */}
                     <div className="reviews-left-col w-full lg:w-1/2 max-w-xl pb-10">
                         {/* Decorative Red Dot */}
-                        <div className="reviews-left-item w-1.5 h-1.5 rounded-full bg-[#dc4c3e] mb-10 ml-32 shadow-sm"></div>
+                        <div className="reviews-left-item w-1.5 h-1.5 rounded-full bg-[#FFC107] mb-10 ml-32 shadow-sm"></div>
 
                         <div className="reviews-left-item inline-flex items-center gap-3 px-2 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 shadow-sm">
                             <div className="flex -space-x-2 pl-1">
@@ -79,7 +79,7 @@ const Reviews = () => {
                             <div className="flex justify-between items-start mb-10">
                                 <div className="flex gap-1.5">
                                     {[1, 2, 3, 4, 5].map((_, i) => (
-                                        <Star key={i} className="w-4 h-4 fill-[#dc4c3e] text-[#dc4c3e]" />
+                                        <Star key={i} className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
                                     ))}
                                 </div>
                                 {/* Quote SVG */}

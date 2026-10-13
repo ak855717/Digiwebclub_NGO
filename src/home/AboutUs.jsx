@@ -88,7 +88,7 @@ const AboutUs = () => {
           {/* Left side: Images Collage */}
           <div className="relative w-full max-w-[500px] mx-auto lg:mx-0 h-[600px]">
             {/* Decorative Background Shade & Glow */}
-            <div className="absolute top-[8%] right-[2%] w-[80%] h-[88%] bg-linear-to-br from-[#DF4A43]/15 via-orange-400/10 to-transparent rounded-[40px] -rotate-6 z-0 blur-xl"></div>
+            <div className="absolute top-[8%] right-[2%] w-[80%] h-[88%] bg-linear-to-br from-[#FFC107]/15 via-orange-400/10 to-transparent rounded-[40px] -rotate-6 z-0 blur-xl"></div>
             <div className="absolute top-[10%] left-[-5%] w-[92%] h-[72%] bg-gray-200/70 rounded-[40px] z-10 border border-gray-300/50 shadow-inner"></div>
 
             {/* Top right image */}
@@ -116,11 +116,11 @@ const AboutUs = () => {
           {/* Right side: Content */}
           <div className="about-content-wrap flex flex-col">
             <div>
-              <div className="about-text-anim inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] text-white rounded-full text-sm font-semibold mb-6">
+              <div className="about-text-anim inline-flex items-center gap-2 px-4 py-2 bg-[#FFC107] text-white rounded-full text-sm font-semibold mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
                 Who We Are
               </div>
-              <h2 className="about-text-anim text-3xl md:text-4xl lg:text-[35px] font-bold text-[#DF4A43] mb-6 leading-[1.25]">
+              <h2 className="about-text-anim text-3xl md:text-4xl lg:text-[35px] font-bold text-[#FFC107] mb-6 leading-[1.25]">
                 ABOUT SUSTAINABLE DEVELOPMENT MISSION
               </h2>
               <p className="about-text-anim text-gray-500 text-md">
@@ -131,7 +131,7 @@ const AboutUs = () => {
             {/* Feature box */}
             <div className="about-features-container p-8 md:p-10">
               <div className="about-feature-box flex gap-6">
-                <div className="shrink-0 w-12 h-12 bg-[#DF4A43] rounded-full flex items-center justify-center text-white">
+                <div className="shrink-0 w-12 h-12 bg-[#FFC107] rounded-full flex items-center justify-center text-white">
                   <Layers className="w-5 h-5" />
                 </div>
                 <div>
@@ -143,7 +143,7 @@ const AboutUs = () => {
               </div>
 
               <div className="about-feature-box flex gap-6 mt-6">
-                <div className="shrink-0 w-12 h-12 bg-[#DF4A43] rounded-full flex items-center justify-center text-white">
+                <div className="shrink-0 w-12 h-12 bg-[#FFC107] rounded-full flex items-center justify-center text-white">
                   <Binoculars className="w-5 h-5" />
                 </div>
                 <div>
@@ -157,7 +157,7 @@ const AboutUs = () => {
 
             {/* Action area */}
             <div className="about-text-anim flex flex-wrap items-center gap-8 border-t-2 border-gray-200 pt-6">
-              <Link to="/about" className="flex items-center gap-4 bg-[#D34646] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold">
+              <Link to="/about" className="flex items-center gap-4 bg-[#D34646] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#d4a000] transition-colors font-semibold">
                 More About Us
                 <span className="bg-white text-gray-900 p-2 rounded-lg">
                   <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />

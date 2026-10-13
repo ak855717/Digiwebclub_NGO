@@ -73,7 +73,7 @@ const OurFeatures = () => {
             {/* Header Section */}
             <div className="features-header flex flex-col items-center text-center mb-16">
                 <div className="features-header-item flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 mb-6 shadow-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#FFC107]"></div>
                     <span className="text-sm font-semibold text-gray-700">Our Core Features</span>
                 </div>
                 <h2 className="features-header-item text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
@@ -88,7 +88,7 @@ const OurFeatures = () => {
             <div className="features-grid grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20">
                 {/* Feature 1 */}
                 <div className="features-item flex gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white shadow-sm">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#FFC107] flex items-center justify-center text-white shadow-sm">
                         <Activity className="w-5 h-5" />
                     </div>
                     <div>
@@ -100,7 +100,7 @@ const OurFeatures = () => {
                 </div>
                 {/* Feature 2 */}
                 <div className="features-item flex gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white shadow-sm">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#FFC107] flex items-center justify-center text-white shadow-sm">
                         <GitBranch className="w-5 h-5" />
                     </div>
                     <div>
@@ -112,7 +112,7 @@ const OurFeatures = () => {
                 </div>
                 {/* Feature 3 */}
                 <div className="features-item flex gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white shadow-sm">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#FFC107] flex items-center justify-center text-white shadow-sm">
                         <Globe className="w-5 h-5" />
                     </div>
                     <div>
@@ -132,7 +132,7 @@ const OurFeatures = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 relative z-10">
                     {/* Stat 1 */}
                     <div className="stat-col flex flex-col">
-                        <div className="w-14 h-14 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white mb-6 shadow-md">
+                        <div className="w-14 h-14 rounded-full bg-[#FFC107] flex items-center justify-center text-white mb-6 shadow-md">
                             <Gem className="w-6 h-6" />
                         </div>
                         <h4 className="text-5xl font-bold text-white mb-2">18K+</h4>
@@ -143,7 +143,7 @@ const OurFeatures = () => {
                     </div>
                     {/* Stat 2 */}
                     <div className="stat-col flex flex-col">
-                        <div className="w-14 h-14 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white mb-6 shadow-md">
+                        <div className="w-14 h-14 rounded-full bg-[#FFC107] flex items-center justify-center text-white mb-6 shadow-md">
                             <PieChart className="w-6 h-6" />
                         </div>
                         <h4 className="text-5xl font-bold text-white mb-2">3500+</h4>
@@ -154,7 +154,7 @@ const OurFeatures = () => {
                     </div>
                     {/* Stat 3 */}
                     <div className="stat-col flex flex-col">
-                        <div className="w-14 h-14 rounded-full bg-[#dc4c3e] flex items-center justify-center text-white mb-6 shadow-md">
+                        <div className="w-14 h-14 rounded-full bg-[#FFC107] flex items-center justify-center text-white mb-6 shadow-md">
                             <Armchair className="w-6 h-6" />
                         </div>
                         <h4 className="text-5xl font-bold text-white mb-2">1200+</h4>

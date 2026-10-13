@@ -114,14 +114,14 @@ const Contact = () => {
                         return (
                             <div
                                 key={idx}
-                                className="bg-white rounded-2xl p-6 shadow-[0_10px_35px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-[#D33D33]/30 hover:shadow-[0_15px_40px_rgba(211,61,51,0.08)] transition-all duration-300 flex flex-col justify-between group"
+                                className="bg-white rounded-2xl p-6 shadow-[0_10px_35px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-[#FFC107]/30 hover:shadow-[0_15px_40px_rgba(211,61,51,0.08)] transition-all duration-300 flex flex-col justify-between group"
                             >
                                 <div>
                                     <div className="flex items-center justify-between mb-4">
-                                        <div className="w-12 h-12 rounded-xl bg-red-50 text-[#D33D33] flex items-center justify-center group-hover:bg-[#D33D33] group-hover:text-white transition-colors duration-300">
+                                        <div className="w-12 h-12 rounded-xl bg-red-50 text-[#FFC107] flex items-center justify-center group-hover:bg-[#FFC107] group-hover:text-white transition-colors duration-300">
                                             <IconComponent className="w-6 h-6" />
                                         </div>
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-600 group-hover:bg-red-50 group-hover:text-[#D33D33] transition-colors">
+                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-gray-600 group-hover:bg-red-50 group-hover:text-[#FFC107] transition-colors">
                                             {channel.tag}
                                         </span>
                                     </div>
@@ -142,7 +142,7 @@ const Contact = () => {
                                         href={channel.actionHref}
                                         target={channel.actionHref.startsWith('http') ? '_blank' : '_self'}
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#D33D33] hover:text-[#b9352c] transition-colors"
+                                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FFC107] hover:text-[#b9352c] transition-colors"
                                     >
                                         {channel.actionText}
                                         <ArrowUpRight className="w-4 h-4" />
@@ -150,7 +150,7 @@ const Contact = () => {
 
                                     <button
                                         onClick={() => handleCopy(channel.copyValue, channel.title)}
-                                        className="p-2 rounded-lg text-gray-400 hover:text-[#D33D33] hover:bg-red-50 transition-colors"
+                                        className="p-2 rounded-lg text-gray-400 hover:text-[#FFC107] hover:bg-red-50 transition-colors"
                                         title="Copy detail"
                                     >
                                         {copiedText === channel.title ? (
@@ -172,7 +172,7 @@ const Contact = () => {
             {/* FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) */}
             <section id="faq" className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="text-center max-w-2xl mx-auto mb-12">
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-50 text-[#D33D33] text-xs font-bold uppercase tracking-wider mb-3">
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-50 text-[#FFC107] text-xs font-bold uppercase tracking-wider mb-3">
                         <HelpCircle className="w-3.5 h-3.5" />
                         Got Questions?
                     </span>
@@ -191,7 +191,7 @@ const Contact = () => {
                             <div
                                 key={idx}
                                 className={`rounded-2xl border transition-all duration-300 ${isOpen
-                                    ? 'bg-white border-[#D33D33]/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)]'
+                                    ? 'bg-white border-[#FFC107]/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)]'
                                     : 'bg-white border-gray-200/80 hover:border-gray-300'
                                     }`}
                             >
@@ -204,7 +204,7 @@ const Contact = () => {
                                         {faq.question}
                                     </span>
                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${isOpen
-                                        ? 'bg-[#D33D33] text-white rotate-180'
+                                        ? 'bg-[#FFC107] text-white rotate-180'
                                         : 'bg-gray-100 text-gray-600'
                                         }`}>
                                         <ChevronDown className="w-4 h-4" />
@@ -240,7 +240,7 @@ const Contact = () => {
                     <div className="flex flex-wrap items-center gap-4 shrink-0">
                         <a
                             href="mailto:csr-partner@ekdkn.org"
-                            className="px-7 py-4 rounded-xl bg-[#D33D33] hover:bg-[#b9352c] text-white font-semibold text-sm flex items-center gap-2 transition-colors shadow-lg"
+                            className="px-7 py-4 rounded-xl bg-[#FFC107] hover:bg-[#b9352c] text-white font-semibold text-sm flex items-center gap-2 transition-colors shadow-lg"
                         >
                             Email CSR Team
                             <ArrowUpRight className="w-4 h-4" />

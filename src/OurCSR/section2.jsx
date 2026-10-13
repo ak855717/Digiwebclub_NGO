@@ -38,7 +38,7 @@ const Section2 = () => {
         <section className="py-16 md:py-24 bg-[#F8F9FA] relative overflow-hidden" id="covid">
             {/* Decorative subtle background elements */}
             <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#944A00]/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-[#D33D33]/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-[#FFC107]/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
@@ -67,7 +67,7 @@ const Section2 = () => {
                         </div>
 
                         <div className="flex items-center justify-center gap-3 bg-white rounded-xl py-3 px-4 shadow-2xs border border-gray-100">
-                            <Heart className="w-5 h-5 text-[#D33D33] shrink-0" />
+                            <Heart className="w-5 h-5 text-[#FFC107] shrink-0" />
                             <div className="text-left">
                                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Health & Safety</p>
                                 <p className="text-sm font-bold text-gray-800">Masks & Sanitization</p>

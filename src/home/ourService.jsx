@@ -70,7 +70,7 @@ const OurService = () => {
         {/* Top Header Row */}
         <div className="service-header-row flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <div className="service-header-item inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] rounded-full text-sm font-semibold text-white mb-6">
+            <div className="service-header-item inline-flex items-center gap-2 px-4 py-2 bg-[#FFC107] rounded-full text-sm font-semibold text-white mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
               Our Services
             </div>
@@ -83,7 +83,7 @@ const OurService = () => {
             <p className="service-header-item text-gray-500 mb-6 text-[15px] leading-relaxed">
               We focus on reaching vulnerable communities with timely assistance and sustainable programs, ensuring that everyone has a chance to thrive.
             </p>
-            <button className="service-header-item flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold">
+            <button className="service-header-item flex items-center gap-4 bg-[#FFC107] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#d4a000] transition-colors font-semibold">
               View All Initiatives
               <span className="bg-white text-gray-900 p-2 rounded-lg">
                 <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
@@ -101,56 +101,56 @@ const OurService = () => {
 
               {/* Service Item 1 */}
               <div className="service-card p-4 md:p-8 md:pl-0 border-b border-gray-300/50 md:border-r">
-                <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
+                <div className="w-14 h-14 bg-[#FFC107] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#FFC107]/20">
                   <Aperture className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">DAKSH Literacy Program</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   We offer a literacy-numeracy enhancement project to reduce educational inequalities for children.
                 </p>
-                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#FFC107] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                 </a> */}
               </div>
 
               {/* Service Item 2 */}
               <div className="service-card p-4 md:p-8 border-b border-gray-300/50">
-                <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
+                <div className="w-14 h-14 bg-[#FFC107] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#FFC107]/20">
                   <Layers className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Environmental Protection</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   Through the DRI initiative, we conduct plantation drives in barren lands, schools, and parks.
                 </p>
-                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#FFC107] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                 </a> */}
               </div>
 
               {/* Service Item 3 */}
               <div className="service-card p-4 md:p-8 md:pl-0 border-b md:border-b-0 border-gray-300/50 md:border-r">
-                <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
+                <div className="w-14 h-14 bg-[#FFC107] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#FFC107]/20">
                   <PackagePlus className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Community Support</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   Providing assistance and empowerment programs to specially-abled and impoverished families.
                 </p>
-                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#FFC107] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                 </a> */}
               </div>
 
               {/* Service Item 4 */}
               <div className="service-card p-4 md:p-8">
-                <div className="w-14 h-14 bg-[#DF4A43] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#DF4A43]/20">
+                <div className="w-14 h-14 bg-[#FFC107] rounded-full flex items-center justify-center text-white mb-6 shadow-md shadow-[#FFC107]/20">
                   <Settings className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Healthcare & Medical Aid</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   Our healthcare initiatives include free medical camps, health check-ups, and emergency aid.
                 </p>
-                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#DF4A43] transition-colors group">
+                {/* <a href="#" className="inline-flex items-center gap-2 font-bold text-slate-900 text-sm hover:text-[#FFC107] transition-colors group">
                   Read More <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                 </a> */}
               </div>
@@ -186,7 +186,7 @@ const OurService = () => {
               </h3>
 
               {/* Button */}
-              <Link to="/contact" className="flex items-center gap-4 bg-[#DF4A43] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#c23d3d] transition-colors font-semibold relative z-10">
+              <Link to="/contact" className="flex items-center gap-4 bg-[#FFC107] text-white pr-1.5 pl-6 py-1.5 rounded-xl hover:bg-[#d4a000] transition-colors font-semibold relative z-10">
                 Contact Now
                 <span className="bg-white text-gray-900 p-2 rounded-lg">
                   <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
@@ -210,12 +210,12 @@ const OurService = () => {
         <div className="service-footer-row mt-20 text-center flex flex-wrap items-center justify-center gap-3">
           <div className="flex -space-x-2 relative z-10">
             <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100&auto=format&fit=crop" alt="Agent" />
-            <div className="w-10 h-10 rounded-full bg-[#DF4A43] flex items-center justify-center border-2 border-white text-white shadow-sm z-20">
+            <div className="w-10 h-10 rounded-full bg-[#FFC107] flex items-center justify-center border-2 border-white text-white shadow-sm z-20">
               <Phone className="w-4 h-4" fill="currentColor" />
             </div>
           </div>
           <p className="text-gray-500 font-medium text-[15px]">
-            Have questions about our initiatives? <Link to="/contact" className="text-[#DF4A43] font-bold underline decoration-2 underline-offset-4 hover:text-[#c23d3d] transition-colors">Contact Us</Link>
+            Have questions about our initiatives? <Link to="/contact" className="text-[#FFC107] font-bold underline decoration-2 underline-offset-4 hover:text-[#d4a000] transition-colors">Contact Us</Link>
           </p>
         </div>
 

@@ -149,7 +149,7 @@ const Upcoming = () => {
                 <div className="upcoming-header-wrap flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
                     <div className="max-w-2xl">
                         <div className="upcoming-header-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 mb-6 shadow-sm">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#dc4c3e]"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#FFC107]"></div>
                             <span className="text-sm font-semibold text-gray-700">Upcoming Events</span>
                         </div>
                         <h2 className="upcoming-header-item text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight pr-4">
@@ -161,17 +161,17 @@ const Upcoming = () => {
                             Be part of our events and community outreach programs. Each event is an opportunity to connect, contribute, and make a meaningful difference.
                         </p>
                         <div className="upcoming-header-item flex flex-wrap items-center justify-between w-full gap-4">
-                            <Link to="/upcoming" className="inline-flex items-center gap-3 bg-[#dc4c3e] hover:bg-[#c94134] text-white pl-6 pr-2 py-2 rounded-xl font-medium transition-colors">
+                            <Link to="/upcoming" className="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#d4a000] text-white pl-6 pr-2 py-2 rounded-xl font-medium transition-colors">
                                 View Upcoming Events
-                                <div className="bg-white text-[#dc4c3e] p-1.5 rounded-lg">
+                                <div className="bg-white text-[#FFC107] p-1.5 rounded-lg">
                                     <ArrowUpRight className="w-4 h-4" strokeWidth={3} />
                                 </div>
                             </Link>
                             <div className="flex items-center gap-2">
-                                <button onClick={scrollLeft} className="w-11 h-11 rounded-full border-2 border-gray-200 flex items-center justify-center text-slate-700 hover:bg-[#dc4c3e] hover:text-white hover:border-[#dc4c3e] transition-all">
+                                <button onClick={scrollLeft} className="w-11 h-11 rounded-full border-2 border-gray-200 flex items-center justify-center text-slate-700 hover:bg-[#FFC107] hover:text-white hover:border-[#FFC107] transition-all">
                                     <ChevronLeft className="w-5 h-5" />
                                 </button>
-                                <button onClick={scrollRight} className="w-11 h-11 rounded-full border-2 border-gray-200 flex items-center justify-center text-slate-700 hover:bg-[#dc4c3e] hover:text-white hover:border-[#dc4c3e] transition-all">
+                                <button onClick={scrollRight} className="w-11 h-11 rounded-full border-2 border-gray-200 flex items-center justify-center text-slate-700 hover:bg-[#FFC107] hover:text-white hover:border-[#FFC107] transition-all">
                                     <ChevronRight className="w-5 h-5" />
                                 </button>
                             </div>
@@ -200,7 +200,7 @@ const Upcoming = () => {
                                         </h3>
 
                                         <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
-                                            <button className="inline-flex items-center gap-2 text-slate-900 font-semibold hover:text-[#dc4c3e] transition-colors text-sm">
+                                            <button className="inline-flex items-center gap-2 text-slate-900 font-semibold hover:text-[#FFC107] transition-colors text-sm">
                                                 Read More
                                                 <ArrowUpRight className="w-4 h-4" />
                                             </button>
@@ -218,25 +218,25 @@ const Upcoming = () => {
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-gray-200"></div>
                         <div className="w-2 h-2 rounded-full bg-gray-200"></div>
-                        <div className="w-8 h-2 rounded-full bg-[#dc4c3e]"></div>
+                        <div className="w-8 h-2 rounded-full bg-[#FFC107]"></div>
                         <div className="w-2 h-2 rounded-full bg-gray-200"></div>
                         <div className="w-2 h-2 rounded-full bg-gray-200"></div>
                     </div>
 
                     <div className="flex flex-col items-center gap-4 mt-2">
                         <div className="flex items-center gap-3">
-                            <span className="px-3 py-1 bg-[#dc4c3e] text-white text-[11px] font-bold rounded-full uppercase tracking-wide">Join Us</span>
+                            <span className="px-3 py-1 bg-[#FFC107] text-white text-[11px] font-bold rounded-full uppercase tracking-wide">Join Us</span>
                             <span className="text-slate-700 font-medium text-sm md:text-base">Participate in Our Upcoming Events and Be Part of Meaningful Change.</span>
                         </div>
 
                         <div className="flex items-center gap-4 text-sm font-medium text-slate-500 mt-2">
                             <span>Supported By <strong className="text-slate-900 font-bold">58,900+</strong> Volunteers</span>
                             <div className="flex items-center gap-1">
-                                <Star className="w-4 h-4 fill-[#dc4c3e] text-[#dc4c3e]" />
-                                <Star className="w-4 h-4 fill-[#dc4c3e] text-[#dc4c3e]" />
-                                <Star className="w-4 h-4 fill-[#dc4c3e] text-[#dc4c3e]" />
-                                <Star className="w-4 h-4 fill-[#dc4c3e] text-[#dc4c3e]" />
-                                <Star className="w-4 h-4 fill-[#dc4c3e] text-[#dc4c3e]" />
+                                <Star className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
+                                <Star className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
+                                <Star className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
+                                <Star className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
+                                <Star className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
                                 <span className="ml-1 text-slate-900 font-bold">4.9/5</span>
                             </div>
                         </div>

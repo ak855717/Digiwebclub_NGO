@@ -61,7 +61,7 @@ const Blog = () => {
         {/* Top Header & Search Bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#DF4A43]/10 text-[#DF4A43] rounded-full text-sm font-semibold mb-3 border border-[#DF4A43]/20">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FFC107]/10 text-[#FFC107] rounded-full text-sm font-semibold mb-3 border border-[#FFC107]/20">
               <Sparkles size={14} />
               <span>Stories From The Ground</span>
             </div>
@@ -81,7 +81,7 @@ const Blog = () => {
               placeholder="Search articles, topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-gray-200 focus:outline-none focus:border-[#DF4A43] focus:ring-2 focus:ring-[#DF4A43]/10 transition-all text-[15px] shadow-sm"
+              className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-gray-200 focus:outline-none focus:border-[#FFC107] focus:ring-2 focus:ring-[#FFC107]/10 transition-all text-[15px] shadow-sm"
             />
             {searchQuery && (
               <button
@@ -102,7 +102,7 @@ const Blog = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-[#DF4A43] text-white shadow-md shadow-[#DF4A43]/25 scale-105'
+                  ? 'bg-[#FFC107] text-white shadow-md shadow-[#FFC107]/25 scale-105'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200/80 shadow-xs'
               }`}
             >
@@ -124,7 +124,7 @@ const Blog = () => {
                 setSearchQuery('');
                 setSelectedCategory('All');
               }}
-              className="px-6 py-2.5 bg-[#DF4A43] text-white rounded-xl font-medium hover:bg-[#d83c3c] transition-colors"
+              className="px-6 py-2.5 bg-[#FFC107] text-white rounded-xl font-medium hover:bg-[#d4a000] transition-colors"
             >
               Reset Filters
             </button>
@@ -144,7 +144,7 @@ const Blog = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute top-6 left-6">
-                <span className="px-4 py-1.5 bg-[#DF4A43] text-white text-xs font-semibold rounded-full shadow-md">
+                <span className="px-4 py-1.5 bg-[#FFC107] text-white text-xs font-semibold rounded-full shadow-md">
                   Featured • {featuredPost.category}
                 </span>
               </div>
@@ -154,17 +154,17 @@ const Blog = () => {
               <div>
                 <div className="flex items-center gap-4 text-xs font-medium text-gray-500 mb-4">
                   <span className="flex items-center gap-1.5">
-                    <Calendar size={14} className="text-[#DF4A43]" />
+                    <Calendar size={14} className="text-[#FFC107]" />
                     {featuredPost.date}
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1.5">
-                    <Clock size={14} className="text-[#DF4A43]" />
+                    <Clock size={14} className="text-[#FFC107]" />
                     {featuredPost.readTime}
                   </span>
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1c222e] mb-4 leading-tight group-hover:text-[#DF4A43] transition-colors">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#1c222e] mb-4 leading-tight group-hover:text-[#FFC107] transition-colors">
                   {featuredPost.title}
                 </h3>
 
@@ -178,7 +178,7 @@ const Blog = () => {
                   <img
                     src={featuredPost.author.avatar}
                     alt={featuredPost.author.name}
-                    className="w-10 h-10 rounded-full object-cover border-2 border-[#DF4A43]/20"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#FFC107]/20"
                   />
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 leading-none mb-1">
@@ -190,7 +190,7 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#DF4A43] group-hover:translate-x-1 transition-transform">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#FFC107] group-hover:translate-x-1 transition-transform">
                   <span>Read Story</span>
                   <ArrowUpRight size={18} />
                 </div>
@@ -227,17 +227,17 @@ const Blog = () => {
                   <div className="p-6">
                     <div className="flex items-center gap-3 text-xs font-medium text-gray-500 mb-3">
                       <span className="flex items-center gap-1">
-                        <Calendar size={13} className="text-[#DF4A43]" />
+                        <Calendar size={13} className="text-[#FFC107]" />
                         {post.date}
                       </span>
                       <span>•</span>
                       <span className="flex items-center gap-1">
-                        <Clock size={13} className="text-[#DF4A43]" />
+                        <Clock size={13} className="text-[#FFC107]" />
                         {post.readTime}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#1c222e] mb-3 leading-snug group-hover:text-[#DF4A43] transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-[#1c222e] mb-3 leading-snug group-hover:text-[#FFC107] transition-colors line-clamp-2">
                       {post.title}
                     </h3>
 
@@ -260,7 +260,7 @@ const Blog = () => {
                     </span>
                   </div>
 
-                  <div className="inline-flex items-center text-xs font-bold text-[#DF4A43] group-hover:translate-x-1 transition-transform">
+                  <div className="inline-flex items-center text-xs font-bold text-[#FFC107] group-hover:translate-x-1 transition-transform">
                     <span>Read →</span>
                   </div>
                 </div>
@@ -271,10 +271,10 @@ const Blog = () => {
 
         {/* Newsletter Banner */}
         <div className="blog-card-anim bg-linear-to-br from-[#1B2230] to-[#2A3446] rounded-3xl p-8 md:p-14 text-white shadow-xl relative overflow-hidden">
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[#DF4A43]/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[#FFC107]/15 rounded-full blur-3xl pointer-events-none"></div>
           
           <div className="max-w-3xl mx-auto text-center relative z-10">
-            <span className="inline-block px-4 py-1.5 bg-[#DF4A43] rounded-full text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+            <span className="inline-block px-4 py-1.5 bg-[#FFC107] rounded-full text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
               Stay Informed
             </span>
             <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
@@ -291,11 +291,11 @@ const Blog = () => {
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#DF4A43] focus:bg-white/15 transition-all text-sm"
+                className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#FFC107] focus:bg-white/15 transition-all text-sm"
               />
               <button
                 type="submit"
-                className="px-8 py-3.5 bg-[#DF4A43] hover:bg-[#d83c3c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 text-sm whitespace-nowrap"
+                className="px-8 py-3.5 bg-[#FFC107] hover:bg-[#d4a000] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 text-sm whitespace-nowrap"
               >
                 {isSubscribed ? 'Subscribed! ✓' : 'Subscribe Now'}
               </button>

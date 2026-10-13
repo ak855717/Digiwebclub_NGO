@@ -42,7 +42,7 @@ const BlogPost = () => {
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Article Not Found</h2>
         <Link
           to="/blog"
-          className="px-6 py-3 bg-[#DF4A43] text-white rounded-xl font-medium"
+          className="px-6 py-3 bg-[#FFC107] text-white rounded-xl font-medium"
         >
           Back to Blog
         </Link>
@@ -83,10 +83,10 @@ const BlogPost = () => {
           return (
             <blockquote
               key={idx}
-              className="my-8 p-6 md:p-8 bg-linear-to-r from-[#DF4A43]/10 via-[#DF4A43]/5 to-transparent border-l-4 border-[#DF4A43] rounded-r-2xl italic text-gray-800 text-lg md:text-xl font-serif shadow-xs"
+              className="my-8 p-6 md:p-8 bg-linear-to-r from-[#FFC107]/10 via-[#FFC107]/5 to-transparent border-l-4 border-[#FFC107] rounded-r-2xl italic text-gray-800 text-lg md:text-xl font-serif shadow-xs"
             >
               <div className="flex gap-3">
-                <Quote size={28} className="text-[#DF4A43] shrink-0 opacity-80" />
+                <Quote size={28} className="text-[#FFC107] shrink-0 opacity-80" />
                 <span>{quoteText}</span>
               </div>
             </blockquote>
@@ -98,7 +98,7 @@ const BlogPost = () => {
             <ul key={idx} className="my-6 space-y-3 pl-2">
               {items.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-gray-700 text-base md:text-lg leading-relaxed">
-                  <span className="w-2 h-2 rounded-full bg-[#DF4A43] mt-2.5 shrink-0"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#FFC107] mt-2.5 shrink-0"></span>
                   <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 font-semibold">$1</strong>') }} />
                 </li>
               ))}
@@ -111,7 +111,7 @@ const BlogPost = () => {
             <ol key={idx} className="my-6 space-y-4 pl-2">
               {items.map((item, i) => (
                 <li key={i} className="flex items-start gap-3.5 text-gray-700 text-base md:text-lg leading-relaxed">
-                  <span className="w-6 h-6 rounded-full bg-[#DF4A43]/15 text-[#DF4A43] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-6 h-6 rounded-full bg-[#FFC107]/15 text-[#FFC107] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
                     {i + 1}
                   </span>
                   <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 font-semibold">$1</strong>') }} />
@@ -143,7 +143,7 @@ const BlogPost = () => {
         <div className="post-anim mb-8">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-[#DF4A43] transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-[#FFC107] transition-colors group"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             <span>Back to All Blogs</span>
@@ -153,18 +153,18 @@ const BlogPost = () => {
         {/* Article Header */}
         <div className="post-anim bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-md mb-10">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <span className="px-4 py-1.5 bg-[#DF4A43] text-white text-xs md:text-sm font-semibold rounded-full shadow-sm">
+            <span className="px-4 py-1.5 bg-[#FFC107] text-white text-xs md:text-sm font-semibold rounded-full shadow-sm">
               {currentPost.category}
             </span>
 
             <div className="flex items-center gap-4 text-xs md:text-sm text-gray-500 font-medium">
               <span className="flex items-center gap-1.5">
-                <Calendar size={15} className="text-[#DF4A43]" />
+                <Calendar size={15} className="text-[#FFC107]" />
                 {currentPost.date}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
-                <Clock size={15} className="text-[#DF4A43]" />
+                <Clock size={15} className="text-[#FFC107]" />
                 {currentPost.readTime}
               </span>
             </div>
@@ -180,7 +180,7 @@ const BlogPost = () => {
               <img
                 src={currentPost.author.avatar}
                 alt={currentPost.author.name}
-                className="w-12 h-12 rounded-full object-cover border-2 border-[#DF4A43]/20 shadow-sm"
+                className="w-12 h-12 rounded-full object-cover border-2 border-[#FFC107]/20 shadow-sm"
               />
               <div>
                 <h4 className="text-base font-bold text-gray-900 leading-none mb-1">
@@ -230,7 +230,7 @@ const BlogPost = () => {
             </div>
             <Link
               to="/contact"
-              className="px-6 py-3 bg-[#DF4A43] hover:bg-[#d83c3c] text-white font-semibold rounded-xl text-sm transition-all shadow-md hover:shadow-lg whitespace-nowrap"
+              className="px-6 py-3 bg-[#FFC107] hover:bg-[#d4a000] text-white font-semibold rounded-xl text-sm transition-all shadow-md hover:shadow-lg whitespace-nowrap"
             >
               Support Our Mission →
             </Link>
@@ -242,14 +242,14 @@ const BlogPost = () => {
           <div className="post-anim mt-20">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <span className="text-xs font-semibold text-[#DF4A43] uppercase tracking-wider">Explore More</span>
+                <span className="text-xs font-semibold text-[#FFC107] uppercase tracking-wider">Explore More</span>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#1c222e] mt-1">
                   Related Stories & Updates
                 </h3>
               </div>
               <Link
                 to="/blog"
-                className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-[#DF4A43] hover:underline"
+                className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-[#FFC107] hover:underline"
               >
                 <span>View All Blogs</span>
                 <ArrowUpRight size={16} />
@@ -283,12 +283,12 @@ const BlogPost = () => {
                       <span>•</span>
                       <span>{relPost.readTime}</span>
                     </div>
-                    <h4 className="text-base font-bold text-gray-900 leading-snug group-hover:text-[#DF4A43] transition-colors line-clamp-2">
+                    <h4 className="text-base font-bold text-gray-900 leading-snug group-hover:text-[#FFC107] transition-colors line-clamp-2">
                       {relPost.title}
                     </h4>
                   </div>
 
-                  <div className="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#DF4A43]">
+                  <div className="px-5 pb-5 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#FFC107]">
                     <span>Read Story</span>
                     <ArrowUpRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                   </div>

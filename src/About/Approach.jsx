@@ -35,7 +35,7 @@ const Approach = () => {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto">
           {/* Tag Pill */}
-          <div className="inline-flex items-center gap-2 bg-[#D33D33] rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
+          <div className="inline-flex items-center gap-2 bg-[#FFC107] rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
             <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
             Our Approach
           </div>
@@ -60,7 +60,7 @@ const Approach = () => {
             >
               {/* Card Header (Icon + Title) */}
               <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-full bg-[#D33D33] text-white flex items-center justify-center shrink-0 shadow-sm">
+                <div className="w-11 h-11 rounded-full bg-[#FFC107] text-white flex items-center justify-center shrink-0 shadow-sm">
                   {card.icon}
                 </div>
                 <h3 className="font-bold text-lg sm:text-xl text-[#1A202C]">
@@ -95,7 +95,7 @@ const Approach = () => {
                 alt="Representative"
                 className="w-8 h-8 rounded-full object-cover border-2 border-white shadow-xs"
               />
-              <div className="w-8 h-8 rounded-full bg-[#D33D33] text-white flex items-center justify-center shadow-xs border-2 border-white">
+              <div className="w-8 h-8 rounded-full bg-[#FFC107] text-white flex items-center justify-center shadow-xs border-2 border-white">
                 <PhoneCall className="w-3.5 h-3.5" />
               </div>
             </div>
@@ -104,7 +104,7 @@ const Approach = () => {
             </span>
             <a
               href="#contact"
-              className="text-[#D33D33] font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-[#b9352c] transition-colors"
+              className="text-[#FFC107] font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-[#b9352c] transition-colors"
             >
               Get Free Quote
             </a>
@@ -116,9 +116,9 @@ const Approach = () => {
               Trusted By <strong className="font-semibold text-gray-900">58,900+</strong> Users
             </span>
             <span className="w-px h-4 bg-gray-300 mx-3.5 hidden sm:inline-block"></span>
-            <div className="flex items-center gap-1 text-[#D33D33] mt-1 sm:mt-0">
+            <div className="flex items-center gap-1 text-[#FFC107] mt-1 sm:mt-0">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-[#D33D33] text-[#D33D33]" />
+                <Star key={i} className="w-4 h-4 fill-[#FFC107] text-[#FFC107]" />
               ))}
             </div>
             <span className="font-semibold text-gray-900 ml-2">4.9/5</span>

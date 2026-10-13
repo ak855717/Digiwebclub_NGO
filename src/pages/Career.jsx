@@ -27,7 +27,7 @@ const Career = () => {
             {/* Intro Header Banner */}
             <section className="py-12 md:py-16 bg-white border-b border-gray-100">
                 <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D33D33]/10 text-[#D33D33] text-sm font-semibold mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFC107]/10 text-[#FFC107] text-sm font-semibold mb-4">
                         <Sparkles className="w-4 h-4" />
                         Join The Movement
                     </div>

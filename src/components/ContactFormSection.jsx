@@ -100,7 +100,7 @@ const ContactFormSection = () => {
 
                 {/* LEFT COLUMN: CONTACT FORM (7 COLS) */}
                 <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-gray-100">
-                    <div className="flex items-center gap-2 text-[#D33D33] font-semibold text-sm tracking-wide uppercase mb-2">
+                    <div className="flex items-center gap-2 text-[#FFC107] font-semibold text-sm tracking-wide uppercase mb-2">
                         <Sparkles className="w-4 h-4" />
                         Reach Out To Us
                     </div>
@@ -143,7 +143,7 @@ const ContactFormSection = () => {
                                 {/* Full Name */}
                                 <div>
                                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
-                                        Full Name <span className="text-[#D33D33]">*</span>
+                                        Full Name <span className="text-[#FFC107]">*</span>
                                     </label>
                                     <input
                                         type="text"
@@ -153,7 +153,7 @@ const ContactFormSection = () => {
                                         placeholder="e.g. Rahul Sharma"
                                         className={`w-full px-4 py-3.5 rounded-xl border text-sm transition-colors bg-gray-50/50 focus:bg-white focus:outline-none ${formErrors.fullName
                                             ? 'border-red-500 focus:border-red-500'
-                                            : 'border-gray-200 focus:border-[#D33D33]'
+                                            : 'border-gray-200 focus:border-[#FFC107]'
                                             }`}
                                     />
                                     {formErrors.fullName && (
@@ -167,7 +167,7 @@ const ContactFormSection = () => {
                                 {/* Email Address */}
                                 <div>
                                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
-                                        Email Address <span className="text-[#D33D33]">*</span>
+                                        Email Address <span className="text-[#FFC107]">*</span>
                                     </label>
                                     <input
                                         type="email"
@@ -177,7 +177,7 @@ const ContactFormSection = () => {
                                         placeholder="e.g. rahul@organization.com"
                                         className={`w-full px-4 py-3.5 rounded-xl border text-sm transition-colors bg-gray-50/50 focus:bg-white focus:outline-none ${formErrors.email
                                             ? 'border-red-500 focus:border-red-500'
-                                            : 'border-gray-200 focus:border-[#D33D33]'
+                                            : 'border-gray-200 focus:border-[#FFC107]'
                                             }`}
                                     />
                                     {formErrors.email && (
@@ -201,7 +201,7 @@ const ContactFormSection = () => {
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         placeholder="+91 98765 43210"
-                                        className="w-full px-4 py-3.5 rounded-xl border border-gray-200 text-sm transition-colors bg-gray-50/50 focus:bg-white focus:border-[#D33D33] focus:outline-none"
+                                        className="w-full px-4 py-3.5 rounded-xl border border-gray-200 text-sm transition-colors bg-gray-50/50 focus:bg-white focus:border-[#FFC107] focus:outline-none"
                                     />
                                 </div>
 
@@ -216,7 +216,7 @@ const ContactFormSection = () => {
                                         value={formData.organization}
                                         onChange={handleInputChange}
                                         placeholder="Company, NGO, or College"
-                                        className="w-full px-4 py-3.5 rounded-xl border border-gray-200 text-sm transition-colors bg-gray-50/50 focus:bg-white focus:border-[#D33D33] focus:outline-none"
+                                        className="w-full px-4 py-3.5 rounded-xl border border-gray-200 text-sm transition-colors bg-gray-50/50 focus:bg-white focus:border-[#FFC107] focus:outline-none"
                                     />
                                 </div>
                             </div>
@@ -232,7 +232,7 @@ const ContactFormSection = () => {
                                     value={formData.subject}
                                     onChange={handleInputChange}
                                     placeholder="Brief summary of your inquiry"
-                                    className="w-full px-4 py-3.5 rounded-xl border border-gray-200 text-sm transition-colors bg-gray-50/50 focus:bg-white focus:border-[#D33D33] focus:outline-none"
+                                    className="w-full px-4 py-3.5 rounded-xl border border-gray-200 text-sm transition-colors bg-gray-50/50 focus:bg-white focus:border-[#FFC107] focus:outline-none"
                                 />
                             </div>
 
@@ -240,7 +240,7 @@ const ContactFormSection = () => {
                             <div>
                                 <div className="flex items-center justify-between mb-2">
                                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
-                                        Your Message <span className="text-[#D33D33]">*</span>
+                                        Your Message <span className="text-[#FFC107]">*</span>
                                     </label>
                                     <span className="text-xs text-gray-400 font-medium">
                                         {formData.message.length} chars
@@ -254,7 +254,7 @@ const ContactFormSection = () => {
                                     placeholder="Please provide details about your inquiry, CSR partnership interest, or volunteer availability..."
                                     className={`w-full px-4 py-3.5 rounded-xl border text-sm transition-colors bg-gray-50/50 focus:bg-white focus:outline-none resize-y ${formErrors.message
                                         ? 'border-red-500 focus:border-red-500'
-                                        : 'border-gray-200 focus:border-[#D33D33]'
+                                        : 'border-gray-200 focus:border-[#FFC107]'
                                         }`}
                                 ></textarea>
                                 {formErrors.message && (
@@ -270,7 +270,7 @@ const ContactFormSection = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#D33D33] hover:bg-[#b9352c] disabled:opacity-70 text-white font-semibold text-sm flex items-center justify-center gap-3 shadow-lg shadow-red-500/20 transition-all duration-200"
+                                    className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#FFC107] hover:bg-[#b9352c] disabled:opacity-70 text-white font-semibold text-sm flex items-center justify-center gap-3 shadow-lg shadow-red-500/20 transition-all duration-200"
                                 >
                                     {isSubmitting ? (
                                         <>
@@ -295,7 +295,7 @@ const ContactFormSection = () => {
                     {/* REGIONAL HUBS TABS CARD */}
                     <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-gray-100">
                         <div className="flex items-center gap-2 text-sm font-bold text-gray-900 mb-4">
-                            <Building2 className="w-5 h-5 text-[#D33D33]" />
+                            <Building2 className="w-5 h-5 text-[#FFC107]" />
                             Pan-India Regional Hubs
                         </div>
                         <p className="text-xs text-gray-500 mb-6">
@@ -312,25 +312,25 @@ const ContactFormSection = () => {
                                         Delhi NCR (Headquarters)
                                     </h4>
                                 </div>
-                                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-red-100 text-[#D33D33]">
+                                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-red-100 text-[#FFC107]">
                                     Active Hub
                                 </span>
                             </div>
 
                             <div className="space-y-2.5 pt-3 border-t border-gray-200/70 text-xs text-gray-700">
                                 <div className="flex items-start gap-2.5">
-                                    <MapPin className="w-4 h-4 text-[#D33D33] shrink-0 mt-0.5" />
+                                    <MapPin className="w-4 h-4 text-[#FFC107] shrink-0 mt-0.5" />
                                     IInd Floor, H-47, Block H, Bali Nagar, Delhi, 110015
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Phone className="w-4 h-4 text-[#D33D33] shrink-0" />
-                                    <a href="tel:+918826335688" className="hover:text-[#D33D33] font-medium">
+                                    <Phone className="w-4 h-4 text-[#FFC107] shrink-0" />
+                                    <a href="tel:+918826335688" className="hover:text-[#FFC107] font-medium">
                                         +918826335688
                                     </a>
                                 </div>
                                 <div className="flex items-center gap-2.5">
-                                    <Mail className="w-4 h-4 text-[#D33D33] shrink-0" />
-                                    <a href="mailto:info@ekdkn.com" className="hover:text-[#D33D33] font-medium">
+                                    <Mail className="w-4 h-4 text-[#FFC107] shrink-0" />
+                                    <a href="mailto:info@ekdkn.com" className="hover:text-[#FFC107] font-medium">
                                         info@ekdkn.com
                                     </a>
                                 </div>
@@ -349,7 +349,7 @@ const ContactFormSection = () => {
 
                     {/* INTERACTIVE MAP PREVIEW CARD */}
                     <div className="bg-linear-to-br from-[#1A2130] to-[#252E42] rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-xl">
-                        <div className="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-[#D33D33]/15 blur-2xl pointer-events-none"></div>
+                        <div className="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-[#FFC107]/15 blur-2xl pointer-events-none"></div>
 
                         <div className="flex items-center justify-between mb-4">
                             <span className="text-xs font-bold uppercase tracking-widest text-red-400 flex items-center gap-1.5">
@@ -371,7 +371,7 @@ const ContactFormSection = () => {
                         {/* Simulated Stylized Map Card */}
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-[#D33D33] flex items-center justify-center shrink-0">
+                                <div className="w-10 h-10 rounded-xl bg-[#FFC107] flex items-center justify-center shrink-0">
                                     <MapPin className="w-5 h-5 text-white" />
                                 </div>
                                 <div>

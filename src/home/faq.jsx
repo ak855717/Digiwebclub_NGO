@@ -113,7 +113,7 @@ const Faq = () => {
                         />
 
                         {/* Spinning Contact Us Badge */}
-                        <div className="faq-badge-contact absolute top-8 -right-4 md:-right-10 lg:-right-12 w-[130px] h-[130px] bg-[#dc4c3e] rounded-full flex items-center justify-center shadow-xl z-20 border-[6px] border-[#f8f9fa]">
+                        <div className="faq-badge-contact absolute top-8 -right-4 md:-right-10 lg:-right-12 w-[130px] h-[130px] bg-[#FFC107] rounded-full flex items-center justify-center shadow-xl z-20 border-[6px] border-[#f8f9fa]">
                             <div className="animate-[spin_12s_linear_infinite] w-full h-full absolute inset-0">
                                 <svg viewBox="0 0 100 100" className="w-full h-full text-white font-bold text-[11px] uppercase tracking-widest">
                                     <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
@@ -124,7 +124,7 @@ const Faq = () => {
                                     </text>
                                 </svg>
                             </div>
-                            <div className="bg-white text-[#dc4c3e] rounded-full p-2.5 z-10 shadow-sm relative">
+                            <div className="bg-white text-[#FFC107] rounded-full p-2.5 z-10 shadow-sm relative">
                                 <Heart className="w-5 h-5 fill-current" />
                             </div>
                         </div>
@@ -161,7 +161,7 @@ const Faq = () => {
 
                     {/* Right Column - FAQ Accordion */}
                     <div className="faq-right-col w-full lg:w-1/2 pt-16 lg:pt-0">
-                        <div className="faq-right-header inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#dc4c3e] border border-gray-200 mb-6 shadow-sm">
+                        <div className="faq-right-header inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFC107] border border-gray-200 mb-6 shadow-sm">
                             <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
                             <span className="text-sm font-semibold text-white">Frequently Asked Questions</span>
                         </div>
@@ -181,7 +181,7 @@ const Faq = () => {
                                         className="w-full flex items-center justify-between p-6 text-left focus:outline-none transition-colors hover:bg-gray-50"
                                     >
                                         <span className="font-semibold text-slate-900 text-[1.05rem] pr-4">{faq.question}</span>
-                                        <div className="shrink-0 w-8 h-8 rounded-full bg-[#dc4c3e] text-white flex items-center justify-center transition-transform duration-300 shadow-sm">
+                                        <div className="shrink-0 w-8 h-8 rounded-full bg-[#FFC107] text-white flex items-center justify-center transition-transform duration-300 shadow-sm">
                                             {openIndex === faq.id ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                                         </div>
                                     </button>

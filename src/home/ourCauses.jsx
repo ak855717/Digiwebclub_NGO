@@ -12,7 +12,7 @@ const OurCauses = () => {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#DF4A43] rounded-full text-sm font-semibold text-white mb-6 shadow-sm border border-gray-100">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFC107] rounded-full text-sm font-semibold text-white mb-6 shadow-sm border border-gray-100">
               <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
               Our Blog
             </div>
@@ -25,7 +25,7 @@ const OurCauses = () => {
             <p className="text-gray-500 mb-8 text-[15px] leading-relaxed">
               Explore real stories from the field, educational insights, and updates on how your contributions are transforming children's lives across the nation.
             </p>
-            <Link to='/blog' className="inline-flex items-center gap-4 bg-[#e94545] text-white pl-6 pr-1.5 py-1.5 rounded-lg font-medium hover:bg-[#d83c3c] transition-colors shadow-md">
+            <Link to='/blog' className="inline-flex items-center gap-4 bg-[#FFC107] text-white pl-6 pr-1.5 py-1.5 rounded-lg font-medium hover:bg-[#d4a000] transition-colors shadow-md">
               View All Blogs
               <span className="bg-white text-gray-700 p-2 rounded-md">
                 <ArrowUpRight size={18} strokeWidth={2.5} />
@@ -62,15 +62,15 @@ const OurCauses = () => {
 
                 <div>
                   <div className="flex items-center gap-2 text-white/70 text-xs mb-3">
-                    <Calendar size={13} className="text-[#DF4A43]" />
+                    <Calendar size={13} className="text-[#FFC107]" />
                     <span>{post.date}</span>
                   </div>
                   <h3 className="text-xl md:text-[22px] font-bold text-white mb-4 leading-snug group-hover:-translate-y-1 transition-transform duration-300 line-clamp-2">
                     {post.title}
                   </h3>
-                  <div className="inline-flex items-center gap-2 text-white font-medium hover:text-[#DF4A43] group/link transition-colors">
+                  <div className="inline-flex items-center gap-2 text-white font-medium hover:text-[#FFC107] group/link transition-colors">
                     <span>Read Article</span>
-                    <ArrowUpRight size={18} className="transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 text-[#DF4A43]" />
+                    <ArrowUpRight size={18} className="transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 text-[#FFC107]" />
                   </div>
                 </div>
               </div>
@@ -82,12 +82,12 @@ const OurCauses = () => {
         <div className="mt-16 flex items-center justify-center gap-3">
           <div className="relative flex items-center">
             <img src={avatarImg} alt="User Avatar" className="w-9 h-9 rounded-full object-cover border-2 border-white shadow-sm" />
-            <div className="w-7 h-7 rounded-full bg-[#e94545] text-white flex items-center justify-center border-2 border-white -ml-3 z-10 shadow-sm">
+            <div className="w-7 h-7 rounded-full bg-[#FFC107] text-white flex items-center justify-center border-2 border-white -ml-3 z-10 shadow-sm">
               <Phone size={12} fill="currentColor" />
             </div>
           </div>
           <p className="text-gray-700 font-medium text-[15px]">
-            Want to share a story or contribute an article? <Link to="/contact" className="text-[#e94545] underline decoration-[#e94545] underline-offset-4 font-semibold hover:text-[#d83c3c]">Contact Us</Link>
+            Want to share a story or contribute an article? <Link to="/contact" className="text-[#FFC107] underline decoration-[#FFC107] underline-offset-4 font-semibold hover:text-[#d4a000]">Contact Us</Link>
           </p>
         </div>
       </div>
