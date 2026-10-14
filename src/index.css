@@ -1,1 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.font-caveat {
+  font-family: "Caveat", "Segoe Print", cursive;
+  letter-spacing: 0.02em;
+}

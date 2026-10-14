@@ -1,21 +1,23 @@
-import Hero from '../home/Hero'
-import About from '../home/AboutUs'
-import Service from '../home/ourService'
-import WhyChoose from '../home/whyChoose'
-import OurStory from '../home/ourStory'
-import OurCauses from '../home/ourCauses'
-import OurFeatures from '../home/ourFeatures'
-import Upcoming from '../home/upcoming'
-import Donation from '../home/donation'
-import Faq from '../home/faq'
-import Reviews from '../home/reviews'
-import Sponsors from '../home/sponsors'
+import Hero from "../home/Hero";
+import About from "../home/AboutUs";
+import Service from "../home/ourService";
+import WhyChoose from "../home/whyChoose";
+import Chidren from "../home/Children";
+import OurStory from "../home/ourStory";
+import OurCauses from "../home/ourCauses";
+import OurFeatures from "../home/ourFeatures";
+import Upcoming from "../home/upcoming";
+import Donation from "../home/donation";
+import Faq from "../home/faq";
+import Reviews from "../home/reviews";
+import Sponsors from "../home/sponsors";
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <About />
+      <Chidren />
       <Service />
       <Sponsors />
       <WhyChoose />
@@ -27,7 +29,7 @@ const Home = () => {
       <Faq />
       <Reviews />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
