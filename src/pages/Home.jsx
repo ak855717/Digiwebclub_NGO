@@ -3,6 +3,7 @@ import About from "../home/AboutUs";
 import Service from "../home/ourService";
 import WhyChoose from "../home/whyChoose";
 import Chidren from "../home/Children";
+import Gallery from "../home/Gallery";
 import OurStory from "../home/ourStory";
 import OurCauses from "../home/ourCauses";
 import OurFeatures from "../home/ourFeatures";
@@ -18,11 +19,13 @@ const Home = () => {
       <Hero />
       <About />
       <Chidren />
+      <Gallery />
       <Service />
       <Sponsors />
       <WhyChoose />
       <OurStory />
       <OurCauses />
+      <Gallery />
       <OurFeatures />
       <Upcoming />
       <Donation />

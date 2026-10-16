@@ -9,3 +9,9 @@
   font-family: "Caveat", "Segoe Print", cursive;
   letter-spacing: 0.02em;
 }
+
+@media (min-width: 768px) {
+  .hero-left-photo {
+    clip-path: url("#hero-left-photo-clip");
+  }
+}
