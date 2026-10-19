@@ -4,7 +4,7 @@ import childrenReceivingGifts from "../assets/home/image (9).jpeg";
 import childrenLearning from "../assets/home/image (2).jpeg";
 import childrenCelebrating from "../assets/home/image (4).jpeg";
 import childrenTogether from "../assets/home/hero-slider3.webp";
-import spradeGreen from "../assets/home/sprade-green.Png";
+import spradeGreen from "../assets/home/sprade-green.png";
 
 const galleryImages = [
   {
