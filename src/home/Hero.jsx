@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import heroImage from '../assets/home/hero.jpeg';
+import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import heroImage from "../assets/home/hero.jpeg";
 
 const galleryImages = Object.entries(
-  import.meta.glob('../assets/Gallery/*.{webp,jpeg}', {
+  import.meta.glob("../assets/Gallery/*.{webp,jpeg}", {
     eager: true,
-    query: '?url',
-    import: 'default',
+    query: "?url",
+    import: "default",
   }),
 )
-  .sort(([first], [second]) => first.localeCompare(second, undefined, { numeric: true }))
+  .sort(([first], [second]) =>
+    first.localeCompare(second, undefined, { numeric: true }),
+  )
   .map(([, src], index) => ({
     src,
     alt: `Gallery photo ${index + 1}`,
@@ -27,7 +29,9 @@ const Hero = () => {
   }, []);
 
   const showPreviousSlide = () => {
-    setCurrentSlide((slide) => (slide - 1 + galleryImages.length) % galleryImages.length);
+    setCurrentSlide(
+      (slide) => (slide - 1 + galleryImages.length) % galleryImages.length,
+    );
   };
 
   const showNextSlide = () => {
@@ -36,19 +40,24 @@ const Hero = () => {
 
   return (
     <section
-      className="relative isolate flex min-h-[720px] w-full overflow-hidden bg-[#111c26] text-white md:min-h-[760px] md:h-screen"
+      className="relative isolate flex  min-h-[720px] w-full overflow-hidden text-white md:min-h-[760px] md:h-screen"
       aria-label="Featured community and event photos"
     >
       <img
         src={heroImage}
         alt="A community volunteer holding a young child"
-        className="hero-left-photo absolute inset-y-0 left-0 z-10 h-full w-[38%] bg-[#111c26] object-contain object-center"
+        className="hero-left-photo absolute inset-y-0 left-0 z-10 h-full w-full object-cover object-center md:w-[48%]"
       />
 
       <div className="hero-gallery-slider absolute inset-0 z-0 overflow-hidden">
         {galleryImages.map((image, index) => {
-          const offset = (index - currentSlide + galleryImages.length) % galleryImages.length;
-          const slideOffset = offset > galleryImages.length / 2 ? offset - galleryImages.length : offset;
+          const offset =
+            (index - currentSlide + galleryImages.length) %
+            galleryImages.length;
+          const slideOffset =
+            offset > galleryImages.length / 2
+              ? offset - galleryImages.length
+              : offset;
 
           return (
             <img
@@ -56,7 +65,7 @@ const Hero = () => {
               src={image.src}
               alt={image.alt}
               aria-hidden={index !== currentSlide}
-              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-in-out"
+              className="absolute inset-y-0 right-0 z-0 h-full w-[63%] object-cover transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(${slideOffset * 100}%)` }}
             />
           );
@@ -64,15 +73,15 @@ const Hero = () => {
       </div>
 
       <svg
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden h-full w-full md:block"
-        viewBox="0 0 1000 800"
+        className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden h-full w-[48%] md:block"
+        viewBox="0 0 380 800"
         preserveAspectRatio="none"
         aria-hidden="true"
       >
         <defs>
           <clipPath id="hero-left-photo-clip" clipPathUnits="objectBoundingBox">
             <path
-              transform="scale(0.00263 0.00125)"
+              transform="scale(0.00263158 0.00125)"
               d="M0 0H350C298 20 302 63 338 99C380 141 377 194 330 243C285 290 270 330 318 375C365 419 360 462 310 507C266 548 277 600 328 641C376 680 352 739 296 800H0Z"
             />
           </clipPath>

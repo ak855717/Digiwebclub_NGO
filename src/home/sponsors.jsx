@@ -1,88 +1,103 @@
-;
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import shapeTwo from "../assets/home/shape-two.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Dynamically import all images in the sponcer folder
-const sponsorModules = import.meta.glob('../assets/sponcer/*.{webp,jpg,jpeg,png}', { eager: true });
+const sponsorModules = import.meta.glob(
+  "../assets/sponcer/*.{webp,jpg,jpeg,png}",
+  { eager: true },
+);
 const sponsorImages = Object.values(sponsorModules).map((mod) => mod.default);
 
 const Sponsors = () => {
-    const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
 
-    useGSAP(() => {
-        gsap.from('.sponsors-badge', {
-            opacity: 0,
-            y: -30,
-            duration: 0.9,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'top 85%'
-            }
-        });
+  useGSAP(
+    () => {
+      gsap.from(".sponsors-badge", {
+        opacity: 0,
+        y: -30,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+        },
+      });
 
-        gsap.from('.sponsors-marquee-wrap', {
-            opacity: 0,
-            scale: 0.96,
-            duration: 1.1,
-            delay: 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'top 85%'
-            }
-        });
-    }, { scope: sectionRef });
+      gsap.from(".sponsors-marquee-wrap", {
+        opacity: 0,
+        scale: 0.96,
+        duration: 1.1,
+        delay: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+        },
+      });
+    },
+    { scope: sectionRef },
+  );
 
-    return (
-        <section ref={sectionRef} className="relative py-20 bg-[#141820] overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
+  return (
+    <section
+      ref={sectionRef}
+      className="relative isolate py-20 bg-[#0d2f2d] overflow-hidden"
+    >
+      <img
+        src={shapeTwo}
+        alt="shapeTwo"
+        className="pointer-events-none absolute bg bottom-[-10%] object-contain z-10"
+      />
+      {/* Green-tinted background to match the Children section */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1920&auto=format&fit=crop"
+          alt="Hands together"
+          className="w-full h-full object-cover opacity-30 grayscale contrast-125 brightness-75"
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-[#013931] via-[#013931]/30 to-[#013931]/80"></div>
+      </div>
+
+      <div className="relative z-10 w-full flex flex-col items-center">
+        {/* Title Badge */}
+        <div className="sponsors-badge bg-[#f4c84b] text-slate-900 font-bold px-10 py-3 rounded-full shadow-lg tracking-widest text-[0.95rem] mb-16 uppercase border border-gray-200">
+          Our Sponsors
+        </div>
+
+        {/* Scrolling Marquee Container */}
+        <div className="sponsors-marquee-wrap w-full overflow-hidden relative">
+          {/* Gradient Edges for smooth fade */}
+          <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-linear-to-r from-[#013931]/80 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-linear-to-l from-[#013931]/80 to-transparent z-20 pointer-events-none"></div>
+
+          {/* Marquee Track */}
+          <div className="flex w-max animate-marquee">
+            {/* Double the images to create seamless infinite scroll effect */}
+            {[...sponsorImages, ...sponsorImages].map((imgSrc, index) => (
+              <div
+                key={index}
+                className="shrink-0 w-44 h-44 md:w-52 md:h-52 rounded-full border-[6px] md:border-8 border-white bg-white mx-4 md:mx-6 flex items-center justify-center p-5 shadow-2xl overflow-hidden group cursor-pointer"
+              >
                 <img
-                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1920&auto=format&fit=crop"
-                    alt="Hands together"
-                    className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                  src={imgSrc}
+                  alt={`Sponsor ${index + 1}`}
+                  className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/70"></div>
-            </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            <div className="relative z-10 w-full flex flex-col items-center">
-                {/* Title Badge */}
-                <div className="sponsors-badge bg-white text-slate-900 font-bold px-10 py-3 rounded shadow-lg tracking-widest text-[0.95rem] mb-16 uppercase border border-gray-200">
-                    Our Sponsors
-                </div>
-
-                {/* Scrolling Marquee Container */}
-                <div className="sponsors-marquee-wrap w-full overflow-hidden relative">
-                    {/* Gradient Edges for smooth fade */}
-                    <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-linear-to-r from-black/80 to-transparent z-20 pointer-events-none"></div>
-                    <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-linear-to-l from-black/80 to-transparent z-20 pointer-events-none"></div>
-
-                    {/* Marquee Track */}
-                    <div className="flex w-max animate-marquee">
-                        {/* Double the images to create seamless infinite scroll effect */}
-                        {[...sponsorImages, ...sponsorImages].map((imgSrc, index) => (
-                            <div
-                                key={index}
-                                className="shrink-0 w-44 h-44 md:w-52 md:h-52 rounded-full border-[6px] md:border-8 border-white bg-white mx-4 md:mx-6 flex items-center justify-center p-5 shadow-2xl overflow-hidden group cursor-pointer"
-                            >
-                                <img
-                                    src={imgSrc}
-                                    alt={`Sponsor ${index + 1}`}
-                                    className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            <style dangerouslySetInnerHTML={{
-                __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -93,9 +108,11 @@ const Sponsors = () => {
         .animate-marquee:hover {
           animation-play-state: paused;
         }
-      `}} />
-        </section>
-    );
+      `,
+        }}
+      />
+    </section>
+  );
 };
 
 export default Sponsors;

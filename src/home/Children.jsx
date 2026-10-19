@@ -23,7 +23,7 @@ const Children = () => {
       <img
         src={shapeTwo}
         alt="shapeTwo"
-        className="pointer-events-none absolute bottom-[-8%] object-contain"
+        className="pointer-events-none absolute bottom-[-10%] object-contain"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">

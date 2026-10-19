@@ -511,8 +511,11 @@ const GalleryCard = ({ item, onClick }) => {
                     src={item.src}
                     alt={`Gallery photo #${item.id}`}
                     loading="lazy"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-600"
+                    className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-[filter,transform] duration-600"
                 />
+
+                {/* Green tint to match the Children section */}
+                <div className="pointer-events-none absolute inset-0 bg-[#013931]/25 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-60" />
 
                 {/* Hover Reveal Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
