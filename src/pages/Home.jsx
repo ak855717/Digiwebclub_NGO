@@ -8,7 +8,6 @@ import OurStory from "../home/ourStory";
 import OurCauses from "../home/ourCauses";
 import OurFeatures from "../home/ourFeatures";
 import Upcoming from "../home/upcoming";
-import Donation from "../home/donation";
 import Faq from "../home/faq";
 import Reviews from "../home/reviews";
 import Sponsors from "../home/sponsors";
@@ -25,10 +24,8 @@ const Home = () => {
       <WhyChoose />
       <OurStory />
       <OurCauses />
-      <Gallery />
       <OurFeatures />
       <Upcoming />
-      <Donation />
       <Faq />
       <Reviews />
     </div>

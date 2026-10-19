@@ -9,6 +9,8 @@ import image4 from "../assets/home/grid.png";
 import image5 from "../assets/home/hand.png";
 import image6 from "../assets/home/spade-3.png";
 import image7 from "../assets/home/parasuit.png";
+import image8 from "../assets/home/Hands Supporting Soccer Ball with Yellow Accent.png";
+import image9 from "../assets/home/Heart of Helping Hands.png";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -152,7 +154,7 @@ const AboutUs = () => {
               <div className="about-feature-box flex items-center gap-4">
                 <div className="relative flex h-25 w-25 shrink-0 items-center justify-center">
                   <img
-                    src="src/assets/home/Hands Supporting Soccer Ball with Yellow Accent.png"
+                    src={image8}
                     alt="Hands Supporting Soccer Ball with Yellow Accent"
                   />
                 </div>
@@ -171,7 +173,7 @@ const AboutUs = () => {
               <div className="about-feature-box flex items-center gap-4">
                 <div className="relative flex h-25 w-25 shrink-0 items-center justify-center">
                   <img
-                    src="src/assets/home/Heart of Helping Hands.png"
+                    src={image9}
                     alt="Hands Supporting Soccer Ball with Yellow Accent"
                   />
                 </div>

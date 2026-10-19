@@ -1,22 +1,20 @@
-
-import { Routes, Route } from 'react-router-dom'
-import ScrollToTop from './components/ScrollToTop'
-import Navbar from './components/Navbar'
-import Footer from './components/footer'
-import Home from './pages/Home'
-import About from './pages/About'
-import OurCSR from './pages/ourCSR'
-import Upcoming from './pages/upComingEvent'
-import Safety2024 from './pages/Safety2024'
-import Environment from './pages/Environment'
-import Safety2023 from './pages/Safety2023'
-import Media from './pages/Media'
-import Gallery from './pages/Gallery'
-import Contact from './pages/Contact'
-import Career from './pages/Career'
-import Blog from './pages/Blog'
-import BlogPost from './pages/BlogPost'
-
+import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import Navbar from "./components/Navbar";
+import Footer from "./components/footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import OurCSR from "./pages/ourCSR";
+import Upcoming from "./pages/upComingEvent";
+import Safety2024 from "./pages/Safety2024";
+import Environment from "./pages/Environment";
+import Safety2023 from "./pages/Safety2023";
+import Media from "./pages/Media";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
+import Career from "./pages/Career";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function App() {
   return (
@@ -40,7 +38,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
