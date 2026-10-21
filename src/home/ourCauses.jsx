@@ -12,8 +12,8 @@ const OurCauses = () => {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFC107] rounded-full text-sm font-semibold text-white mb-6 shadow-sm border border-gray-100">
-              <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFC107] rounded-full text-sm font-semibold text-black mb-6 shadow-sm border border-gray-100">
+              <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
               Our Blog
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1c222e] leading-[1.1]">
@@ -25,7 +25,7 @@ const OurCauses = () => {
             <p className="text-gray-500 mb-8 text-[15px] leading-relaxed">
               Explore real stories from the field, educational insights, and updates on how your contributions are transforming children's lives across the nation.
             </p>
-            <Link to='/blog' className="inline-flex items-center gap-4 bg-[#FFC107] text-white pl-6 pr-1.5 py-1.5 rounded-lg font-medium hover:bg-[#d4a000] transition-colors shadow-md">
+            <Link to='/blog' className="inline-flex items-center gap-4 bg-[#FFC107] text-black pl-6 pr-1.5 py-1.5 rounded-lg font-medium hover:bg-[#d4a000] transition-colors shadow-md">
               View All Blogs
               <span className="bg-white text-gray-700 p-2 rounded-md">
                 <ArrowUpRight size={18} strokeWidth={2.5} />
